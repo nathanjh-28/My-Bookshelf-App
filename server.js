@@ -15,7 +15,13 @@ app.use(methodOverride('_method'));
 
 // ------------------- ROUTES ---------------- //
 app.get('/', (req, res) => {
-  res.send('<h1>This worked</h1>')
+  res.render('index')
+})
+
+// to be separated
+//show page -- "0" to be replaced by :id
+app.get('/users/0', (req, res) => {
+  res.render('users/show')
 })
 
 app.get('*', (req, res) => {
