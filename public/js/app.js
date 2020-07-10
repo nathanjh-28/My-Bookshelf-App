@@ -12,11 +12,7 @@ fetch(proxyurl + url) // https://cors-anywhere.herokuapp.com/https://example.com
 .then(contents => {
   parser = new DOMParser();
     xmlDoc = parser.parseFromString(contents, "text/xml");
-    // const results = xmlDoc.getElementsByTagName('work');
-    // results.forEach(result => {
-    //   console.log(result)
-    // })
-  const test = xmlDoc.getElementsByTagName("work")[0].childNodes; 
+  const test = xmlDoc.getElementsByTagName("work")[0].childNodes;
   console.log(test) 
 })
 .catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
