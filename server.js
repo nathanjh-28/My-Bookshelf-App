@@ -15,7 +15,7 @@ app.use(methodOverride('_method'));
 
 // ------------------- ROUTES ---------------- //
 app.get('/', (req, res) => {
-  res.send('<h1>This worked</h1>')
+  res.render('index')
 })
 
 app.get('*', (req, res) => {
