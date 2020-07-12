@@ -24,6 +24,10 @@ app.get('/users/0', (req, res) => {
   res.render('users/show')
 })
 
+app.get('/books',(req,res)=>{
+  res.render('books/index');
+})
+
 app.get('*', (req, res) => {
   res.send('<h1>404 Page Not Found</h1>')
 })

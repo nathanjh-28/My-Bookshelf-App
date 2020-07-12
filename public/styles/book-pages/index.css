@@ -1,0 +1,57 @@
+
+main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.books {
+
+}
+
+.book{
+    /* width: 200px;
+    height: 60px; */
+    /* background-color: lightgrey; */
+    display: flex;
+    position: relative;
+    /* margin: 20px; */
+    /* perspective: 400px; */
+}
+
+.covertop{
+    width: 170px;
+    height: 11px;
+    background-color: lightpink;
+    transform: skewX(112deg);
+    transform-origin: 0 100%;
+    border: 1px solid black;
+
+}
+.spine {
+    width: 200px;
+    height: 40px;
+    background-color: lightsalmon;
+    border: 1px solid black;
+}
+
+.side {
+    height: 40px;
+    width: 30px;
+    background-color: lightseagreen;
+    /* transform-style: preserve-3d;
+    transform: perspective(400px) rotateY(45deg) */
+    transform: skewY(-20deg);
+    transform-origin: 0 0;
+    border: 1px solid black;
+    bottom: 0;
+    position: absolute;
+    right: 0;
+}
+
+.book:nth-child(2) {
+    /* margin-left: 10px; */
+
+}
