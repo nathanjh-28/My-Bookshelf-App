@@ -28,6 +28,13 @@ app.get('/books',(req,res)=>{
   res.render('books/index');
 })
 
+const book = require('./models/startData');
+app.get('/books/0', (req, res) => {
+  res.render('books/show', {
+    book: book[2]
+  })
+})
+
 app.get('*', (req, res) => {
   res.send('<h1>404 Page Not Found</h1>')
 })

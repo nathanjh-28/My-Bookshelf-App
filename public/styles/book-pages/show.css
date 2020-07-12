@@ -1,0 +1,86 @@
+body {
+  background: grey;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+}
+header {
+  position: absolute;
+}
+main {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bookCover,
+.bookData {
+  position: absolute;
+  height: 90%;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.leftCover,
+.spine,
+.rightCover {
+  background: rgb(85, 13, 13);
+  border: 3px solid black;
+}
+.leftCover,
+.rightCover {
+  width: 500px;
+  height: 800px;
+}
+.spine {
+  width: 80px;
+  height: 800px;
+}
+.leftCover {
+  transform: perspective(400px) rotateY(3deg);
+  transform-origin: 100% 50%;
+}
+.rightCover {
+  transform: perspective(400px) rotateY(-3deg);
+  transform-origin: 0% 50%;
+}
+
+.leftPage,
+.rightPage {
+  height: 750px;
+  width: 500px;
+  background: antiquewhite;
+  border: 1px solid black;
+}
+.leftPage {
+  transform: perspective(400px) rotateY(2deg);
+  transform-origin: 100% 50%;
+}
+.rightPage {
+  box-sizing: border-box;
+  transform: perspective(400px) rotateY(-2deg);
+  transform-origin: 0% 50%;
+  padding: 30px;
+}
+h2,
+h3,
+h4 {
+  text-align: center;
+}
+p {
+  padding: 15px;
+}
+.rightStack {
+  margin-left: 21px;
+  margin-right: -25px;
+  height: 780px;
+  width: 50px;
+  background: antiquewhite;
+  border: 1px solid black;
+  transform: perspective(400px) rotateY(20deg);
+  transform-origin: 0% 50%;
+}
