@@ -1,6 +1,80 @@
-
+body {
+    background-image: url('../../images/homepage3.jpeg');
+}
+main {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
 .corkboard {
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-image: url('../../images/corkboard.jpg');
+    background-size: cover;
+    border: 5px solid black;
     width: 500px;
     height: 600px;
+    z-index: 5;
+    padding: 15px;
+}
+h2,
+h3,
+li,
+p {
+    background: antiquewhite;
+}
+h2 {
+    padding: 10px;
+}
+img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+ul {
+    list-style: none;
+}
+li {
+    margin: 3px 0px;
+}
+.bottom {
+    height: 10px;
+    width: 400px;
+    bottom: 0;
+    margin-bottom: -10px;
+    z-index: 6;
+}
+
+
+.easel {
+    position: absolute;
+    margin-top: 250px;
+    width: 500px;
+    height: 600px;
+    z-index: 4;
+}
+.leg,
+.bottom {
+    position: absolute;
+    background: grey;
+}
+.leg {
+    width: 10px;
+    height: 600px;
+}
+.leftLeg {
+    transform: rotate(20deg);
+    transform-origin: 0 100%;
+}
+.middleLeg {
+    margin-left: 245px;
+    margin-top: -50px;
+}
+.rightLeg {
+    right: 0;
+    transform: rotate(-20deg);
+    transform-origin: 100% 100%;
 }
