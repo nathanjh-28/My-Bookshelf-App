@@ -71,7 +71,7 @@ h3,
 h4 {
   text-align: center;
 }
-p {
+.summary, .review {
   padding: 15px;
 }
 .rightStack {
