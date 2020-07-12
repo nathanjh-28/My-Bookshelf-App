@@ -4,19 +4,19 @@ Elevator Pitch: An application where users can create bookshelves storing inform
 ## Site Design
 ### Root Page
 User arrives at root page and sees images of a private library, a drop down menu appears requesting a login or to sign up.  Once logged in, the page wipes to the left revealing the user show page.
-![Root Page]('./public/images/MainIndexPage.png)
+![Root Page]('./public/images/MainIndexPage.jpg)
 
 ### User Show Page
 User can see their profile image and other information displayed on a corkboard.  They can see the shelves that they have created on a Bookshelf.  They can click on the shelf and be taken to the book-shelf index page.
-![User Show Page]('./public/images/UserShowPage.png)
+![User Show Page]('./public/images/UserShowPage.jpg)
 
 ### Book-Shelf Index Page
 The User will find a stack of books in front of a fuzzy out of focus background (giving depth).  These books are their books that they can add and remove.  Each book you can click on and be brought to the ...
-![Book Shelf Page]('./public/images/BookShelfIndexPage.png) 
+![Book Shelf Page]('./public/images/BookShelfIndexPage.jpg) 
 
 ### Book Show Page
 User will see the inside of an open book
-![Book Show Page]('./public/images/BookShowPage.png) 
+![Book Show Page]('./public/images/BookShowPage.jpg) 
 
 ### Edit/Add Windows
 Upon clicking ‘add book,’ ‘edit book,’ ‘new shelf,’ or ‘edit shelf’, a window drops down from above to allow user to input information and save

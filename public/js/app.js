@@ -1,8 +1,24 @@
 console.log('sanity check')
 
 // Replace below key with APIkey from Zach
-const key = 'insertkey'
+const key = 'INSERTKEY'
 const url = `https://www.goodreads.com/search.xml?key=${key}&q=Ender%27s+Game`;
+
+//pulled from https://www.w3schools.com/xml/tryit.asp?filename=try_xpath_select_cdnodes
+// but it isn't working yet
+// function showResult(xml) {
+//   const txt = '';
+//   const path = 'GoodreadsResponse/search/results/work'
+//   const nodes = xml.evaluate(path, xml, null, XPathResult.ANY_TYPE, null);
+//   console.log(nodes)
+//         const result = nodes.iterateNext();
+//         while (result) {
+//           console.log(result);
+//             txt += result.childNodes[0].nodeValue + "<br>";
+//             result = nodes.iterateNext();
+//         }
+//   document.getElementById('demo').innerHTML = txt;
+// }
 
 const proxyurl = "https://cors-anywhere.herokuapp.com/";
 //const url = "https://example.com"; // site that doesn’t send Access-Control-*
