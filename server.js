@@ -35,6 +35,9 @@ app.get('/books/0', (req, res) => {
   })
 })
 
+app.get('/books/new',(req,res)=>{
+  res.render('books/new')
+})
 app.get('*', (req, res) => {
   res.send('<h1>404 Page Not Found</h1>')
 })
