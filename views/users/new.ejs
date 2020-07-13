@@ -12,7 +12,7 @@
 </head>
 <body>
   <!-- header partial-->
-  <%-include('./nav.ejs')%> 
+  <%-include('../nav.ejs')%> 
 
   <main>
     <section class="appName">
@@ -20,11 +20,12 @@
     </section>
     <section class="loginBox">
       <form>
-        <label for="username">Username: </label>
+        <label for="username">Create Username: </label>
         <input id="username" type="text" name="username">
-        <label for="password">Password: </label>
+        <label for="password"> Set Password: </label>
         <input id="password" type="password" name="password">
-        <a href="/users/0">Not a user? Create a login</a>
+        <!-- select picture of themselves -->
+        <p>This is where they would select a picture for themselves</p>
         <button type="submit">Log in</button>
       </form>
     </section>
