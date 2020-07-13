@@ -11,7 +11,7 @@ const userSchema = new mongoose.Schema({
     },
     favQuote: String,
     bookshelves: [String],
-    displayName: String,
+    displayName: String
 },{timestamps: true})
 
 module.exports = mongoose.model('User',userSchema);

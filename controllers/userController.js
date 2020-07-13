@@ -11,7 +11,15 @@ const db = require('../models')
 
 
 //show route
+router.get('/:id', (req, res) => {
+  db.User.findById(req.params.id, (err, foundUser) => {
+    if (err) return console.log(err);
+    res.render('users/show', {
+      user: foundUser
+    })
 
+  })
+})
 
 //edit route
 
