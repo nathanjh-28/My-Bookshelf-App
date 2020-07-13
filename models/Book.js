@@ -1,4 +1,4 @@
-const mongoose = requre('mongoose');
+const mongoose = require('mongoose');
 
 const bookSchema = new mongoose.Schema({
     shelf: String,
@@ -14,6 +14,7 @@ const bookSchema = new mongoose.Schema({
     PubDate: Number,
     primaryReview: String,
     coverArt: String,
+    color: String
 })
 
 module.exports = mongoose.model('Book', bookSchema);

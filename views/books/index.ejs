@@ -15,42 +15,20 @@
         <h1>This is the Books Index Page</h1>
         
         <section class="books">
-            <div class="book">
-                <div class="cover">
-                    <div class="covertop">
-                    </div>
-                    <a href="/books/0">
-                        <div class="spine">
-                            <p>Great Expectations</p>
+            <% books.forEach(book => { %>
+                <div class="book">
+                    <div class="cover">
+                        <div class="covertop">
                         </div>
-                    </a>
-                </div>
-                <div class="side"></div>
-            </div>
-            <div class="book">
-                <div class="cover">
-                    <div class="covertop">
+                        <a href="/books/<%=book._id%>">
+                            <div class="spine">
+                                <p><%=book.title%></p>
+                            </div>
+                        </a>
                     </div>
-                    <a href="/books/1">
-                        <div class="spine">
-                            <p>House of Leaves</p>
-                        </div>
-                    </a>
+                    <div class="side"></div>
                 </div>
-                <div class="side"></div>
-            </div>        
-            <div class="book">
-                <div class="cover">
-                    <div class="covertop">
-                    </div>
-                    <a href="/books/2">
-                        <div class="spine">
-                            <p>Blood Meridian</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="side"></div>
-            </div>
+            <% }) %>
         </section>
         <div class='newBook'>
             <a href="/books/new">
