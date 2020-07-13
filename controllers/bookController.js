@@ -22,10 +22,12 @@ router.get('/new', (req, res) => {
 
 
 //show route
-const book = require('../models/startData');
 router.get('/:id', (req, res) => {
-  res.render('books/show', {
-    book: book[2]
+  db.Book.findById(req.params.id, (err, foundBook) => {
+    if (err) return console.log(err);
+    res.render('books/show', {
+      book: foundBook
+    })
   })
 })
 
