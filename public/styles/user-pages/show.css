@@ -2,6 +2,7 @@ body {
     background-image: url('../../images/homepage3.jpeg');
 }
 main {
+    margin-top: 25px;
     display: flex;
     justify-content: center;
     position: relative;
