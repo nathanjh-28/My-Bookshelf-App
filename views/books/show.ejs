@@ -32,6 +32,10 @@
         <p class='review'><%= book.primaryReview %></p>
         <p> Maybe Goodreads scrolls here for phones </p>
       </div>
+      <a href="/books/<%= book._id %>/edit"><div class="edit"><p>Edit</p></div></a>
+      <form action="/books/<%= book._id %>?_method=DELETE" method="POST">
+        <button type="submit" class="delete"><p>Delete</p></button>
+      </form>
       <div class="rightStack"></div>
     </section>
   </main>
