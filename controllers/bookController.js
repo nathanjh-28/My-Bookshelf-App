@@ -19,7 +19,13 @@ router.get('/new', (req, res) => {
 })
 
 //create route
-
+router.post('/', (req, res) => {
+  db.Book.create(req.body, (err, newBook) => {
+    if (err) return console.log(err);
+    console.log('Created book: ', newBook);
+    res.redirect(`/books/${newBook._id}`);
+  })
+})
 
 //show route
 router.get('/:id', (req, res) => {
