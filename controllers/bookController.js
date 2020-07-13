@@ -2,14 +2,6 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models')
 
-//assuming there is only one user, only for dev purposes
-let userID = 'str'
-db.User.find({}, (err,foundUser)=>{
-  if(err) return console.log(err);
-  userID = foundUser[0]._id;
-  console.log(userID);
-})
-
 //paths begin '/books'
 //index route
 router.get('/', (req, res) => {
@@ -42,8 +34,8 @@ router.post('/', (req, res) => {
 })
 
 //show route
-router.get('/:id', (req, res) => {
-  db.Book.findById(req.params.id, (err, foundBook) => {
+router.get('/:bookid', (req, res) => {
+  db.Book.findById(req.params.bookid, (err, foundBook) => {
     if (err) return console.log(err);
     res.render('books/show', {
       book: foundBook
