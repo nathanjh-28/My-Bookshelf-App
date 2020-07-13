@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+body {
+    margin: 0;
+}
 
 header {
     display: flex;
@@ -7,12 +10,12 @@ header {
     background-color: black;
     padding: 10px;
     margin: 0;
-    position: fixed;
+    /* position: fixed; */
     top: 0;
 }
 
 .nav-link {
-    color: white;
+    color: antiquewhite;
     text-decoration: none;
     font-size: 24px;
     padding: 15px;

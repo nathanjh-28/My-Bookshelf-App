@@ -1,57 +1,70 @@
-
+body {
+    background-image: url('../../images/bookStackBackground.jpg');
+    background-size: 1200px;
+}
 main {
+    height: 90vh;
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
 .books {
-
+    height: 500px;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
 }
 
 .book{
-    /* width: 200px;
-    height: 60px; */
-    /* background-color: lightgrey; */
     display: flex;
     position: relative;
-    /* margin: 20px; */
-    /* perspective: 400px; */
+    margin-top: -11px;
 }
-
+.cover {
+    width: 350px;
+}
+.covertop,
+.spine {
+    width: 317px;
+    background-color: rgb(99, 15, 15);
+    border: 1px solid black;
+}
 .covertop{
-    width: 170px;
     height: 11px;
-    background-color: lightpink;
     transform: skewX(112deg);
     transform-origin: 0 100%;
-    border: 1px solid black;
-
+}
+.spine,
+.side {
+    height: 50px;
 }
 .spine {
-    width: 200px;
-    height: 40px;
-    background-color: lightsalmon;
-    border: 1px solid black;
+    text-align: center;
+    background-image: linear-gradient(to top, rgb(73, 9, 9), rgb(99, 15, 15) 20%, rgb(99, 15, 15) 80%, rgb(73, 9, 9));
+}
+.cover a {
+    text-decoration: none;
+}
+.cover a:hover {
+    text-decoration: underline;
+    color: rgb(174, 130, 21)
+}
+.spine p {
+    font-weight: bold;
+    color: rgb(174, 130, 21)
 }
 
 .side {
-    height: 40px;
     width: 30px;
-    background-color: lightseagreen;
-    /* transform-style: preserve-3d;
-    transform: perspective(400px) rotateY(45deg) */
+    background-color: antiquewhite;
     transform: skewY(-20deg);
     transform-origin: 0 0;
     border: 1px solid black;
     bottom: 0;
     position: absolute;
     right: 0;
-}
-
-.book:nth-child(2) {
-    /* margin-left: 10px; */
-
 }
