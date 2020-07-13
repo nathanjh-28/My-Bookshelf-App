@@ -32,8 +32,13 @@
           <p class=''>Primary Review:
             <textarea name="primaryReview" cols="50" rows="8"></textarea>
           </p>
-          <p>Shelf<input type="text" name="shelf" id="">
-          </p>
+          <!-- What if user doesn't have any shelves yet? -->
+          <label for="shelf">Shelf</label>
+          <select type="text" name="shelf" id="shelf">
+            <% user.bookshelves.forEach(shelf=>{ %>
+              <option value="<%=shelf%>"><%=shelf%></option>
+            <% }) %>
+          </select>
           <p>Color<input type="text" name="color" id="">
           </p>
           <button type="submit">Add Book</button>
