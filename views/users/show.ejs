@@ -15,7 +15,7 @@
   <section class="corkboard">
     <img src="https://media-exp1.licdn.com/dms/image/C4D03AQECU0BDxdW6XQ/profile-displayphoto-shrink_200_200/0?e=1599696000&v=beta&t=Ud4QEnsQpCl62EqI_OJGziEXde9bXzMG25Di1UunTD8" alt="profile pic">
     <h2 class="username"><%= user.username %> </h2>
-    <button>Edit User Settings</button>
+    <a href="/users/<%=user._id%>/edit"><button>Edit User Settings</button></a>
     <section class="bookshelves">
       <h3>My Bookshelves</h3>
       <ul>
@@ -29,8 +29,11 @@
     </section>
     <section class="stats">
       <p><span>Books on shelves: </span> 42</p>
+
     </section>
-    
+    <form action="/users/<%=user._id%>/?_method=DELETE" method="POST"><button type="submit">Delete Account</button></form>
+
+
     <div class="bottom"></div>
   </section>
   <section class="easel">

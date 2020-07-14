@@ -22,7 +22,8 @@ h1 {
   margin: 0;
 }
 
-.loginBox {
+.loginBox,
+.adduser {
   background: rgba(0,0,0, 0.5);
   border: 2px solid antiquewhite;
   border-radius: 10px;
@@ -33,21 +34,26 @@ h1 {
   justify-content: center;
   align-items: center;
 }
-.loginBox form {
+form {
   width: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
+.adduser {
+  height: 400px;
+
+}
 .username,
 .password {
   margin: 5px 0px;
 }
-.loginBox label {
+label {
   color: antiquewhite;
   display: inline-block;
 }
-.loginBox input {
+input, textarea {
   display: inline-block;
   background: antiquewhite
 }

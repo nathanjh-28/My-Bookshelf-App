@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- nav style -->
+  <link rel="stylesheet" href="/styles/nav.css">
+  <link rel="stylesheet" href="/styles/main.css">
+  <script defer src="/js/app.js"></script>
+  
+  <title>Edit User</title>
+</head>
+<body>
+
+
+  <main>
+    <section class="appName">
+      <h1>My Bookshelf</h1>
+    </section>
+    <section class="adduser">
+      <form action="/users" method="POST">
+        <label for="username">Username: </label>
+        <input id="username" type="text" name="username" value="<%=user.username%>">
+        <label for="password"> Password: </label>
+        <input id="password" type="password" name="password">
+        <label for="favQuote">Favorite Quote:</label>
+          <textarea type="text" name="favQuote" id="favQuote"><%=user.favQuote%></textarea>
+          <label for="displayName">Display Name: </label>
+          <input type="text" name="displayName" id="displayName" value="<%=user.displayName%>">
+          <label for="bookshelf"> Your Bookshelves:</label>
+          <input type="text" name="bookshelf1" id="bookshelf" value="<%=user.bookshelves[0]%>">
+          <input type="text" name="bookshelf2" id="bookshelf" value="<%=user.bookshelves[1]%>">
+          <input type="text" name="bookshelf3" id="bookshelf" value="<%=user.bookshelves[2]%>">
+          <input type="text" name="bookshelf4" id="bookshelf" value="<%=user.bookshelves[3]%>">
+
+        <!-- select picture of themselves -->
+        <button type="submit">Edit User</button>
+      </form>
+    </section>
+  </main>
+  
+</body>
+</html>
