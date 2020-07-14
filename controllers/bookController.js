@@ -78,11 +78,15 @@ router.delete('/:userID',(req,res)=>{
 //BOOK ROUTES
 //index route (refactored)
 router.get('/:userID/books', (req, res) => {
-  db.Book.find({}, (err, foundBooks) => {
+  db.User.findById(req.params.userID)
+  .populate({
+    path: 'books'
+  })
+  .exec((err, foundUser) => {
     if (err) return console.log(err);
     res.render('books/index', {
-      books: foundBooks,
-      userID: req.params.userID,
+      books: foundUser.books,
+      userID: foundUser._id,
     })
   })
 })

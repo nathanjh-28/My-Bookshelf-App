@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Book = require('./Book');
 
 const userSchema = new mongoose.Schema({
     username: {
@@ -11,7 +12,13 @@ const userSchema = new mongoose.Schema({
     },
     favQuote: String,
     bookshelves: [String],
-    displayName: String
+    displayName: String,
+    books: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Book'
+        }
+    ]
 },{timestamps: true})
 
 module.exports = mongoose.model('User',userSchema);
