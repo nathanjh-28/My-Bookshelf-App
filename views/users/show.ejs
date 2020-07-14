@@ -28,7 +28,7 @@
       <p><%= user.favQuote %></p>
     </section>
     <section class="stats">
-      <p><span>Books on shelves: </span> 42</p>
+      <p><span>Total Books: </span> <%=user.books.length%></p>
 
     </section>
     <form action="/users/<%=user._id%>/?_method=DELETE" method="POST"><button type="submit">Delete Account</button></form>
