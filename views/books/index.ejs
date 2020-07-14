@@ -10,7 +10,7 @@
 </head>
 <body>
     <!-- header partial-->
-<%-include('../nav.ejs', {userID: userID})%> 
+<%-include('../nav.ejs', {userID: user._id})%> 
     <main>
         <h1>This is the Books Index Page</h1>
         
@@ -20,7 +20,7 @@
                     <div class="cover">
                         <div class="covertop">
                         </div>
-                        <a href="/users/<%=userID%>/books/<%=book._id%>">
+                        <a href="/users/<%=user._id%>/books/<%=book._id%>">
                             <div class="spine">
                                 <p><%=book.title%></p>
                             </div>
@@ -31,7 +31,7 @@
             <% }) %>
         </section>
         <div class='newBook'>
-            <a href="/users/<%=userID%>/books/new">
+            <a href="/users/<%=user._id%>/books/new">
                 <button>Add Book</button>
             </a>
         </div>

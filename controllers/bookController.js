@@ -83,6 +83,29 @@ router.delete('/:userID',(req,res)=>{
   })
 })
 
+//SHELVES ROUTES (Book index)
+router.get('/:userID/books/shelf/:shelfID', (req, res) => {
+  const shelfID = parseInt(req.params.shelfID);
+  db.User.findById(req.params.userID)
+  .populate({
+    path: 'books'
+  })
+  .exec((err, foundUser) => {
+    if (err) return console.log(err);
+    const shelf = foundUser.bookshelves[shelfID];
+    let shelvedBooks = [];
+    foundUser.books.forEach(book => {
+      if (book.shelf.toString() === shelf.toString()) {
+        shelvedBooks.push(book);
+      }
+    })
+    res.render('books/index', {
+      user: foundUser,
+      books: shelvedBooks
+    })
+  })
+})
+
 
 
 //BOOK ROUTES
@@ -94,23 +117,23 @@ router.get('/:userID/books', (req, res) => {
   })
   .exec((err, foundUser) => {
     if (err) return console.log(err);
-    res.render('books/index', {
+    res.render('books/shelves', {
       books: foundUser.books,
-      userID: foundUser._id,
+      user: foundUser,
     })
   })
 })
 
 //Shelves route (TBD)
-router.get('/:userID/books/shelves', (req, res) => {
-  db.Book.find({}, (err, foundBooks) => {
-    if (err) return console.log(err);
-    res.render('books/shelves', {
-      books: foundBooks,
-      userID: req.params.userID,
-    })
-  })
-})
+// router.get('/:userID/books/shelves', (req, res) => {
+//   db.Book.find({}, (err, foundBooks) => {
+//     if (err) return console.log(err);
+//     res.render('books/shelves', {
+//       books: foundBooks,
+//       userID: req.params.userID,
+//     })
+//   })
+// })
 
 //new route (refactored)
 router.get('/:userID/books/new', (req, res) => {
