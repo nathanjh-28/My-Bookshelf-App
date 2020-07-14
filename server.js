@@ -19,9 +19,9 @@ app.use(methodOverride('_method'));
 
 // assuming there is only one user, only for dev purposes
 let userID = 'str'
-db.User.find({}, (err,foundUser)=>{
+db.User.findOne({username: 'firstUser'}, (err,foundUser)=>{
   if(err) return console.log(err);
-  userID = foundUser[0]._id;
+  userID = foundUser._id;
   console.log(userID);
 })
 

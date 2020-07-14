@@ -13,6 +13,20 @@ router.get('/new',(req,res)=>{
   res.render('users/new');
 });
 
+router.post('/',(req,res)=>{
+  let bookArr = [req.body.bookshelf1,
+    req.body.bookshelf2,
+    req.body.bookshelf3,
+    req.body.bookshelf4,];
+    req.body.bookshelves = bookArr;
+    console.log(req.body.bookshelves)
+    db.User.create(req.body,(err,newUser)=>{
+      if(err)return console.log(err);
+      console.log(newUser);
+      res.redirect(`/users/${newUser._id}`)
+    });
+});
+
 //edit user route
 router.get('/:userID/edit',(req,res)=>{
   db.User.findById(req.params.userID,(err,foundUser)=>{
