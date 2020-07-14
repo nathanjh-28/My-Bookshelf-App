@@ -37,6 +37,23 @@ router.get('/:userID/edit',(req,res)=>{
   })
 })
 
+//update user route
+router.put('/:userID',(req,res)=>{let bookArr = [req.body.bookshelf1,
+  req.body.bookshelf2,
+  req.body.bookshelf3,
+  req.body.bookshelf4,];
+  req.body.bookshelves = bookArr;
+  console.log(req.body.bookshelves)
+  db.User.findByIdAndUpdate(req.params.userID,
+    req.body,
+    {new:true},
+    (err,updatedUser)=>{
+    if(err)return console.log(err);
+    console.log(updatedUser);
+    res.redirect(`/users/${updatedUser._id}`)
+  });
+});
+
 //User Show route
 router.get('/:userID', (req, res) => {
   db.User.findById(req.params.userID, (err, foundUser) => {
@@ -46,6 +63,16 @@ router.get('/:userID', (req, res) => {
     })
   })
 })
+
+//delete user
+router.delete('/:userID',(req,res)=>{
+  db.User.findByIdAndDelete(req.params.userID,(err,deletedUser)=>{
+    if(err) return console.log(err);
+    console.log(deletedUser);
+    res.redirect('/')
+  })
+})
+
 
 
 //BOOK ROUTES
