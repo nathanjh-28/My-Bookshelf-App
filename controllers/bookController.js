@@ -87,6 +87,17 @@ router.get('/:userID/books', (req, res) => {
   })
 })
 
+//Shelves route (TBD)
+router.get('/:userID/books/shelves', (req, res) => {
+  db.Book.find({}, (err, foundBooks) => {
+    if (err) return console.log(err);
+    res.render('books/shelves', {
+      books: foundBooks,
+      userID: req.params.userID,
+    })
+  })
+})
+
 //new route (refactored)
 router.get('/:userID/books/new', (req, res) => {
   //hardcoded ID

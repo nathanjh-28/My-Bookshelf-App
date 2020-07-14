@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/nav.css">
+  <link rel="stylesheet" href="/styles/book-pages/shelves.css">
+  <title>Book Shelves</title>
+</head>
+<body>
+  <!-- header partial-->
+  <%-include('../nav.ejs', {userID: userID})%>
+  <main>
+    <section class="shelf1">
+      <div class="books"></div>
+      <div class="shelfBoard"></div>
+    </section>
+    <section class="shelf2">
+      <div class="books"></div>
+      <div class="shelfBoard"></div>
+    </section>
+    <section class="shelf3">
+      <div class="books"></div>
+      <div class="shelfBoard"></div>
+    </section>
+    <section class="shelf4">
+      <div class="books"></div>
+      <div class="shelfBoard"></div>
+    </section>
+  </main>
+</body>
+</html>
