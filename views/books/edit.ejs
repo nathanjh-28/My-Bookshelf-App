@@ -10,7 +10,7 @@
 </head>
 <body>
   <!-- header partial-->
-  <%-include('../nav.ejs')%> 
+  <%-include('../nav.ejs', {userID: user._id})%> 
   <main>
     <section class="bookCover">
       <div class="leftCover"></div>
