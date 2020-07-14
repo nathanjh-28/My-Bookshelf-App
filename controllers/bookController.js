@@ -7,6 +7,22 @@ const db = require('../models')
 //all paths continue /:userID/books/:bookID
 
 //USER ROUTES
+
+//Add user route
+router.get('/new',(req,res)=>{
+  res.render('users/new');
+});
+
+//edit user route
+router.get('/:userID/edit',(req,res)=>{
+  db.User.findById(req.params.userID,(err,foundUser)=>{
+    if(err)return console.log(err);
+    res.render('users/edit',{
+      user: foundUser,
+    })
+  })
+})
+
 //User Show route
 router.get('/:userID', (req, res) => {
   db.User.findById(req.params.userID, (err, foundUser) => {
