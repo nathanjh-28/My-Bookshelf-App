@@ -13,6 +13,7 @@ router.get('/new',(req,res)=>{
   res.render('users/new');
 });
 
+//Create New User
 router.post('/',(req,res)=>{
   let bookArr = [req.body.bookshelf1,
     req.body.bookshelf2,
@@ -38,6 +39,9 @@ router.get('/:userID/edit',(req,res)=>{
 })
 
 //update user route
+
+/* ------- Solve Edge Case where user renames shelf --------- */
+
 router.put('/:userID',(req,res)=>{let bookArr = [req.body.bookshelf1,
   req.body.bookshelf2,
   req.body.bookshelf3,
@@ -69,7 +73,13 @@ router.delete('/:userID',(req,res)=>{
   db.User.findByIdAndDelete(req.params.userID,(err,deletedUser)=>{
     if(err) return console.log(err);
     console.log(deletedUser);
-    res.redirect('/')
+    deletedUser.books.forEach(book=>{
+      db.Book.findByIdAndDelete(book,(err,deletedBook)=>{
+        if(err)return console.log(err);
+        console.log(deletedBook);
+        res.redirect('/');
+      })
+    })
   })
 })
 
@@ -119,7 +129,15 @@ router.post('/:userID/books', (req, res) => {
   db.Book.create(req.body, (err, newBook) => {
     if (err) return console.log(err);
     console.log('Created book: ', newBook);
-    res.redirect(`/users/${req.params.userID}/books/${newBook._id}`);
+    db.User.findById(req.params.userID,(err,foundUser)=>{
+      if(err)return console.log(err);
+      foundUser.books.push(newBook);
+      foundUser.save((err,savedUser)=>{
+        if(err)return console.log(user);
+        console.log(savedUser);
+        res.redirect(`/users/${req.params.userID}/books/${newBook._id}`);
+      })
+    })
   })
 })
 
@@ -167,7 +185,14 @@ router.delete('/:userID/books/:bookID',(req,res)=>{
     req.params.bookID, (err, deletedBook)=>{
       if(err)return console.log(err);
       console.log(deletedBook);
-      res.redirect(`/users/${req.params.userID}/books`);
+      db.User.findById(req.params.userID,(err,foundUser)=>{
+        foundUser.books.remove(req.params.bookID)
+        foundUser.save((err,savedUser)=>{
+          if(err)return console.log(err);
+          console.log(savedUser)
+          res.redirect(`/users/${req.params.userID}/books`);
+        })
+      })
     }
   )
 })
