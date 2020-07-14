@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 4000;
 const methodOverride = require('method-override');
+const db = require('./models')
 
 const bookController = require('./controllers/bookController');
 const userController = require('./controllers/userController')
@@ -16,20 +17,20 @@ app.use(express.urlencoded({extended: false}));
 //method override
 app.use(methodOverride('_method'));
 
-//assuming there is only one user, only for dev purposes
-// let userID = 'str'
-// db.User.find({}, (err,foundUser)=>{
-//   if(err) return console.log(err);
-//   userID = foundUser[0]._id;
-//   console.log(userID);
-// })
+// assuming there is only one user, only for dev purposes
+let userID = 'str'
+db.User.find({}, (err,foundUser)=>{
+  if(err) return console.log(err);
+  userID = foundUser[0]._id;
+  console.log(userID);
+})
 
 // ------------------- ROUTES ---------------- //
 app.get('/', (req, res) => {
   res.render('index')
 })
 
-app.use(`/books`, bookController);
+app.use(`/users/:userID/books`, bookController);
 app.use('/users', userController);
 
 // to be separated

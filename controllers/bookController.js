@@ -3,12 +3,14 @@ const router = express.Router();
 const db = require('../models')
 
 //paths begin '/books'
+// this path now begins with users/{userID}/books
 //index route
 router.get('/', (req, res) => {
   db.Book.find({}, (err, foundBooks) => {
     if (err) return console.log(err);
     res.render('books/index', {
-      books: foundBooks
+      books: foundBooks,
+      userID: req.params.userID,
     })
   })
 })
@@ -16,7 +18,11 @@ router.get('/', (req, res) => {
 //new route
 router.get('/new', (req, res) => {
   //hardcoded ID
-  db.User.findById(userID,(err,foundUser)=>{
+  db.User.findById(
+    
+    req.params.userID
+    
+    ,(err,foundUser)=>{
     if(err)return console.log(err);
     res.render('books/new',{
       user: foundUser,
@@ -44,8 +50,12 @@ router.get('/:bookid', (req, res) => {
 })
 
 //edit route
-router.get('/:id/edit',(req,res)=>{
-  db.User.findById(userID,(err,foundUser)=>{
+router.get('/:bookid/edit',(req,res)=>{
+  db.User.findById(
+    
+    req.params.userID
+    
+    ,(err,foundUser)=>{
     if(err)return console.log(err);
     db.Book.findById(req.params.id, (err, foundBook) => {
       if (err) return console.log(err);
@@ -59,7 +69,7 @@ router.get('/:id/edit',(req,res)=>{
 
 
 //update route
-router.put('/:id',(req,res)=>{
+router.put('/:bookid',(req,res)=>{
   db.Book.findByIdAndUpdate(
     req.params.id,
     req.body,
@@ -71,7 +81,7 @@ router.put('/:id',(req,res)=>{
 });
 
 //delete route
-router.delete('/:id',(req,res)=>{
+router.delete('/:bookid',(req,res)=>{
   db.Book.findByIdAndDelete(
     req.params.id, (err, deletedBook)=>{
       if(err)return console.log(err);
