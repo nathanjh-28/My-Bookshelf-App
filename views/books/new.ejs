@@ -10,7 +10,7 @@
 </head>
 <body>
   <!-- header partial-->
-  <%-include('../nav.ejs')%> 
+  <%-include('../nav.ejs', {userID: user._id})%> 
   <main>
     <section class="bookCover">
       <div class="leftCover"></div>
@@ -22,7 +22,7 @@
         <p>AND on the book add page, maybe make this a Search?</p>
       </div>
       <div class="rightPage">
-        <form action="/books" method="POST">
+        <form action="/users/<%=user._id%>/books" method="POST">
           <h2> Title: <input type="text" name="title"> </h2>
           <h3>Author: <input type="text" name="author"></h3>
           <h4>Publication Date: <input type="text" name="PubDate" ></h4>

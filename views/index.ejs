@@ -12,8 +12,6 @@
 </head>
 <body>
   <!-- header partial-->
-  <%-include('./nav.ejs')%> 
-
   <main>
     <section class="loginBox">
       <h1>My Bookshelf</h1>
@@ -26,8 +24,8 @@
           <label for="password">Password: </label>
           <input id="password" type="password" name="password">
         </div>
-        <a href="/users/0">Not a user? Create a login</a>
-        <button type="submit">Log in</button>
+        <a href="/users/<%=userID%>">Not a user? Create a login</a>
+        <a href="/users/<%=userID%>"></a><button type="submit">Log in</button></a>
       </form>
     </section>
   </main>

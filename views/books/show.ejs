@@ -10,7 +10,7 @@
 </head>
 <body>
   <!-- header partial-->
-  <%-include('../nav.ejs')%> 
+  <%-include('../nav.ejs', {userID: userID})%> 
   <main>
     <section class="bookCover">
       <div class="leftCover"></div>
@@ -31,11 +31,11 @@
         <p class='summary'><%= book.summary %></p>
         <p class='review'><%= book.primaryReview %></p>
         <p> Maybe Goodreads scrolls here for phones </p>
+        <a href="/users/<%=userID%>/books/<%=book._id%>/edit"><button>Edit</button></a>
+        <form action="/users/<%=userID%>/books/<%= book._id %>?_method=DELETE" method="POST">
+          <button type="submit"><p>Delete</p></button>
+        </form>
       </div>
-      <a href="/books/<%= book._id %>/edit"><div class="edit"><p>Edit</p></div></a>
-      <form action="/books/<%= book._id %>?_method=DELETE" method="POST">
-        <button type="submit" class="delete"><p>Delete</p></button>
-      </form>
       <div class="rightStack"></div>
     </section>
   </main>

@@ -2,10 +2,25 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models')
 
-//paths begin '/books'
-// this path now begins with users/{userID}/books
-//index route
-router.get('/', (req, res) => {
+
+//paths begin '/users'
+//all paths continue /:userID/books/:bookID
+
+//USER ROUTES
+//User Show route
+router.get('/:userID', (req, res) => {
+  db.User.findById(req.params.userID, (err, foundUser) => {
+    if (err) return console.log(err);
+    res.render('users/show', {
+      user: foundUser
+    })
+  })
+})
+
+
+//BOOK ROUTES
+//index route (refactored)
+router.get('/:userID/books', (req, res) => {
   db.Book.find({}, (err, foundBooks) => {
     if (err) return console.log(err);
     res.render('books/index', {
@@ -15,14 +30,11 @@ router.get('/', (req, res) => {
   })
 })
 
-//new route
-router.get('/new', (req, res) => {
+//new route (refactored)
+router.get('/:userID/books/new', (req, res) => {
   //hardcoded ID
-  db.User.findById(
-    
-    req.params.userID
-    
-    ,(err,foundUser)=>{
+  db.User.findById(req.params.userID, 
+    (err,foundUser)=>{
     if(err)return console.log(err);
     res.render('books/new',{
       user: foundUser,
@@ -30,63 +42,60 @@ router.get('/new', (req, res) => {
   })
 })
 
-//create route
-router.post('/', (req, res) => {
+//create route (refactored)
+router.post('/:userID/books', (req, res) => {
   db.Book.create(req.body, (err, newBook) => {
     if (err) return console.log(err);
     console.log('Created book: ', newBook);
-    res.redirect(`/books/${newBook._id}`);
+    res.redirect(`/users/${req.params.userID}/books/${newBook._id}`);
   })
 })
 
-//show route
-router.get('/:bookid', (req, res) => {
-  db.Book.findById(req.params.bookid, (err, foundBook) => {
+//show route (refactored)
+router.get('/:userID/books/:bookID', (req, res) => {
+  db.Book.findById(req.params.bookID, (err, foundBook) => {
     if (err) return console.log(err);
     res.render('books/show', {
-      book: foundBook
+      book: foundBook,
+      userID: req.params.userID
     })
   })
 })
 
-//edit route
-router.get('/:bookid/edit',(req,res)=>{
-  db.User.findById(
-    
-    req.params.userID
-    
-    ,(err,foundUser)=>{
+//edit route (refactored)
+router.get('/:userID/books/:bookID/edit',(req,res)=>{
+  db.User.findById(req.params.userID,
+    (err,foundUser)=>{
     if(err)return console.log(err);
-    db.Book.findById(req.params.id, (err, foundBook) => {
+    db.Book.findById(req.params.bookID, (err, foundBook) => {
       if (err) return console.log(err);
-    res.render('books/edit',{
-      user: foundUser,
-      book: foundBook,
+      res.render('books/edit',{
+        user: foundUser,
+        book: foundBook,
+      })
     })
   })
-})
 });
 
-
-//update route
-router.put('/:bookid',(req,res)=>{
+//update route (refactored)
+router.put('/:userID/books/:bookID',(req,res)=>{
   db.Book.findByIdAndUpdate(
-    req.params.id,
+    req.params.bookID,
     req.body,
     {new:true},
     (err, updatedBook) =>{
       if(err) return console.log(err);
-      res.redirect(`/books/${req.params.id}`);
+      res.redirect(`/users/${req.params.userID}/books/${req.params.bookID}`);
     });
 });
 
-//delete route
-router.delete('/:bookid',(req,res)=>{
+//delete route (refactored)
+router.delete('/:userID/books/:bookID',(req,res)=>{
   db.Book.findByIdAndDelete(
-    req.params.id, (err, deletedBook)=>{
+    req.params.bookID, (err, deletedBook)=>{
       if(err)return console.log(err);
       console.log(deletedBook);
-      res.redirect('/books');
+      res.redirect(`/users/${req.params.userID}/books`);
     }
   )
 })

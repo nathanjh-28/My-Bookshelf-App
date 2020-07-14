@@ -27,11 +27,15 @@ db.User.find({}, (err,foundUser)=>{
 
 // ------------------- ROUTES ---------------- //
 app.get('/', (req, res) => {
-  res.render('index')
+  res.render('index', {
+    userID: userID
+  })
 })
 
-app.use(`/users/:userID/books`, bookController);
-app.use('/users', userController);
+// feed /users to the bookController
+// use one controller file?
+app.use(`/users`, bookController);
+// app.use('/users', userController);
 
 // to be separated
 //show page -- "0" to be replaced by :id
