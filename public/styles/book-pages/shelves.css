@@ -1,4 +1,95 @@
 body {
-  background-image: url('/images/shelvesBG.jpg');
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main {
+  z-index: 10;
+  margin-top: -100px;
+  height: 900px;
+  width: 1200px;
+  background-image: url('/images/shelvesBGsm.jpeg');
   background-size: cover;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.shelf1,
+.shelf2,
+.shelf3,
+.shelf4 {
+  position: absolute;
+}
+.shelfName1,
+.shelfName2,
+.shelfName3,
+.shelfName4 {
+  position: absolute;
+  background: rgba(0,0,0, 0.5);
+  color: antiquewhite;
+  opacity: 0;
+  transition: 250ms;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  font-family: 'Kanit', sans-serif;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.shelf1,
+.shelfName1,
+.books1 {
+  height: 110px;
+  width: 575px;
+}
+.shelf1 {
+  top: 217px;
+  left: 507px;
+}
+.shelf2,
+.shelfName2,
+.books2 {
+  height: 129px;
+  width: 650px;
+}
+.shelf2 {
+  top: 363px;
+  left: 190px;
+}
+.shelf3,
+.shelfName3,
+.books3 {
+  height: 144px;
+  width: 620px;
+}
+.shelf3 {
+  top: 515px;
+  left: 275px;
+}
+.shelf4,
+.shelfName4,
+.books4 {
+  height: 128px;
+  width: 620px;
+}
+.shelf4 {
+  top: 694px;
+  left: 100px;
+}
+
+.shelf1:hover .shelfName1 {
+  opacity: 1;
+}
+.shelf2:hover .shelfName2 {
+  opacity: 1;
+}
+.shelf3:hover .shelfName3 {
+  opacity: 1;
+}
+.shelf4:hover .shelfName4 {
+  opacity: 1;
 }
