@@ -19,10 +19,10 @@
             <% books.forEach(book => { %>
                 <div class="book">
                     <div class="cover">
-                        <div class="covertop">
+                        <div class="covertop"style="background-color:<%=book.color%>;">
                         </div>
                         <a href="/books/<%=book._id%>">
-                            <div class="spine">
+                            <div class="spine"style="background-color:<%=book.color%>;">
                                 <p><%=book.title%></p>
                             </div>
                         </a>

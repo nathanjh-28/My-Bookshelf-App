@@ -43,7 +43,7 @@ router.use('/', (req, res, next) => {
 
 //MOVE TO USERCONTRL?
 //edit user route
-router.get('/:userID/edit',(req,res)=>{
+router.get('/profile/edit',(req,res)=>{
   db.User.findById(req.params.userID,(err,foundUser)=>{
     if(err)return console.log(err);
     res.render('users/edit',{

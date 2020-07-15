@@ -18,7 +18,7 @@
           <% user.books.forEach(book => { %>
             <% if (book.shelf === user.bookshelves[0]) { %>
               <div class="bookshelf1">
-                <div class="spineshelf1">
+                <div class="spineshelf1"style="background-color:<%=book.color%>;">
                   <p><%=book.title%></p>
                 </div>
               </div>
@@ -34,7 +34,7 @@
           <% user.books.forEach(book => { %>
             <% if (book.shelf === user.bookshelves[1]) { %>
               <div class="bookshelf2">
-                <div class="spineshelf2">
+                <div class="spineshelf2"style="background-color:<%=book.color%>;">
                   <p><%=book.title%></p>
                 </div>
               </div>
@@ -50,7 +50,7 @@
           <% user.books.forEach(book => { %>
             <% if (book.shelf === user.bookshelves[2]) { %>
               <div class="bookshelf3">
-                <div class="spineshelf3">
+                <div class="spineshelf3"style="background-color:<%=book.color%>;">
                   <p><%=book.title%></p>
                 </div>
               </div>
@@ -66,7 +66,7 @@
           <% user.books.forEach(book => { %>
             <% if (book.shelf === user.bookshelves[3]) { %>
               <div class="bookshelf4">
-                <div class="spineshelf4">
+                <div class="spineshelf4" style="background-color:<%=book.color%>;">
                   <p><%=book.title%></p>
                 </div>
               </div>
