@@ -12,8 +12,9 @@
     <!-- header partial-->
 <%-include('../nav.ejs', {userID: user._id})%> 
     <main>
-        <h1>This is the Books Index Page</h1>
-        
+        <section class="shelfPaper">
+            <h1 class="shelfName"><%=user.bookshelves[shelf]%></h1>
+        </section>
         <section class="books">
             <% books.forEach(book => { %>
                 <div class="book">
@@ -30,13 +31,6 @@
                 </div>
             <% }) %>
         </section>
-        <div class='newBook'>
-            <a href="/books/new">
-                <button>Add Book</button>
-            </a>
-        </div>
-
-
     </main>
     
     
