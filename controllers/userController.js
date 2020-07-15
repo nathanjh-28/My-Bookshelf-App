@@ -2,6 +2,16 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models')
 
+//MIDDLEWARE
+//test for authentication
+router.use('/', (req, res, next) => {
+  if (!req.session.currentUser) {
+    res.redirect('/login');
+  } else {
+    next();
+  }
+})
+
 //paths begin '/users'
 //all paths continue /:userID/books/:bookID
 
@@ -46,25 +56,25 @@ router.get('/:userID/edit',(req,res)=>{
 
 /* ------- Solve Edge Case where user renames shelf --------- */
 
-router.put('/:userID',(req,res)=>{let bookArr = [req.body.bookshelf1,
+router.put('/profile',(req,res)=>{let bookArr = [req.body.bookshelf1,
   req.body.bookshelf2,
   req.body.bookshelf3,
   req.body.bookshelf4,];
   req.body.bookshelves = bookArr;
   console.log(req.body.bookshelves)
-  db.User.findByIdAndUpdate(req.params.userID,
+  db.User.findByIdAndUpdate(req.session.currentUser._id,
     req.body,
     {new:true},
     (err,updatedUser)=>{
     if(err)return console.log(err);
     console.log(updatedUser);
-    res.redirect(`/users/${updatedUser._id}`)
+    res.redirect(`/users/profile`)
   });
 });
 
 //User Show route
-router.get('/:userID', (req, res) => {
-  db.User.findById(req.params.userID, (err, foundUser) => {
+router.get('/profile', (req, res) => {
+  db.User.findById(req.session.currentUser._id, (err, foundUser) => {
     if (err) return console.log(err);
     res.render('users/show', {
       user: foundUser

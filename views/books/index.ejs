@@ -20,7 +20,7 @@
                     <div class="cover">
                         <div class="covertop">
                         </div>
-                        <a href="/users/<%=user._id%>/books/<%=book._id%>">
+                        <a href="/books/<%=book._id%>">
                             <div class="spine">
                                 <p><%=book.title%></p>
                             </div>
@@ -31,7 +31,7 @@
             <% }) %>
         </section>
         <div class='newBook'>
-            <a href="/users/<%=user._id%>/books/new">
+            <a href="/books/new">
                 <button>Add Book</button>
             </a>
         </div>
