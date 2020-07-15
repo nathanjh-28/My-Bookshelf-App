@@ -33,6 +33,7 @@ router.get('/shelf/:shelfID', (req, res) => {
     res.render('books/index', {
       user: foundUser,
       books: shelvedBooks,
+      shelf: req.params.shelfID
     })
   })
 })
