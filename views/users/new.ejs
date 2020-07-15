@@ -13,37 +13,33 @@
 <body>
 
 
-  <div class="dialogueBg">
+  <!-- <div class="dialogueBg">
     <div class="dialogueBox">
-      <!-- THIS NEEDS RADIO! -->
-      <% profiles.forEach(image => { %>
         <div class="profile">
-          <img class="proImg" src="<%=image%>">
+          <img class="proImg" src="">
         </div>
-      <% }) %>
     </div>
-
-  </div>
+  </div> -->
   <main>
     <section class="appName">
       <h1>My Bookshelf</h1>
     </section>
     <section class="adduser">
-      <form action="/users" method="POST">
-        <label for="username">Username: </label>
-        <input id="username" type="text" name="username">
+      <form action="/register" method="POST">
+        <label for="displayName">Display Name: </label>
+        <input type="text" name="displayName" id="displayName">
+        <label for="email">Email: </label>
+        <input id="email" type="email" name="email">
         <label for="password"> Password: </label>
         <input id="password" type="password" name="password">
         <label for="favQuote">Favorite Quote:</label>
-          <textarea type="text" name="favQuote" id="favQuote"></textarea>
-          <label for="displayName">Display Name: </label>
-          <input type="text" name="displayName" id="displayName">
-          <label for="bookshelf"> Your Bookshelves:</label>
-          <input type="text" name="bookshelf1" id="bookshelf">
-          <input type="text" name="bookshelf2" id="bookshelf">
-          <input type="text" name="bookshelf3" id="bookshelf">
-          <input type="text" name="bookshelf4" id="bookshelf">
-        <div class="imgButton">Select Image</div>
+        <textarea type="text" name="favQuote" id="favQuote"></textarea>
+        <label for="bookshelf"> Your Bookshelves:</label>
+        <input type="text" name="bookshelf1" id="bookshelf">
+        <input type="text" name="bookshelf2" id="bookshelf">
+        <input type="text" name="bookshelf3" id="bookshelf">
+        <input type="text" name="bookshelf4" id="bookshelf">
+        <!-- <div class="imgButton">Select Image</div> -->
         <button type="submit">Create User</button>
       </form>
     </section>

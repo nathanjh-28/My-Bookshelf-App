@@ -14,8 +14,20 @@ header {
     top: 0;
     z-index: 50;
 }
+nav {
+    display: flex;
+}
+.logoutbutton {
+    display: inline;
+    background: none;
+    border: none;
+    padding: 0;
+    outline: inherit;
+    cursor: pointer;
+}
 
-.nav-link {
+.nav-link,
+.logoutbutton {
     color: antiquewhite;
     text-decoration: none;
     font-size: 24px;
@@ -23,6 +35,8 @@ header {
     font-family: 'Kanit', sans-serif;
 }
 
-.nav-link:hover {
+
+.nav-link:hover,
+.logoutbutton:hover {
     text-decoration: underline;
 }

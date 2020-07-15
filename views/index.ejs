@@ -15,17 +15,17 @@
   <main>
     <section class="loginBox">
       <h1>My Bookshelf</h1>
-      <form>
+      <form action="/login" method="POST">
         <div class="username">
-          <label for="username">Username: </label>
-          <input id="username" type="text" name="username">
+          <label for="email">Email: </label>
+          <input id="email" type="email" name="email">
         </div>
         <div class="password">
           <label for="password">Password: </label>
           <input id="password" type="password" name="password">
         </div>
-        <a href="/users/<%=userID%>">Not a user? Create a login</a>
-        <a href="/users/<%=userID%>"></a><button type="submit">Log in</button></a>
+        <a href="/register">Not a user? Create a login</a>
+        <button type="submit">Log in</button>
       </form>
     </section>
   </main>
