@@ -1,9 +1,10 @@
 <header>
     <nav>
-        <a class="nav-link" href="/users/<%=userID%>/books">Books</a>
-        <a class="nav-link" href="/users/<%=userID%>/books/shelves">Bookshelves</a>
+        <a class="nav-link" href="/books">Books</a>
+        <!-- Need drop down for bookshelves nav button -->
+        <a class="nav-link" href="/books/">Bookshelves</a>
         <!--The below is HARDCODED. CHANGE ASAP-->
-        <a class="nav-link" href="/users/<%=userID%>">Profile Page</a>
+        <a class="nav-link" href="/users/profile">Profile Page</a>
         <form action="/logout?_method=DELETE" method="POST">
             <button class="logoutbutton" type="submit">Logout</button>
         </form>

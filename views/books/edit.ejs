@@ -22,7 +22,7 @@
         <p>AND on the book add page, maybe make this a Search?</p>
       </div>
       <div class="rightPage">
-        <form action="/users/<%=user._id%>/books/<%=book._id%>?_method=PUT" method="POST">
+        <form action="/books/<%=book._id%>?_method=PUT" method="POST">
           <h2> Title: <input type="text" name="title" value="<%=book.title%>"></h2>
           <h3>Author: <input type="text" name="author" value="<%=book.author%>"></h3>
           <h4>Publication Date: <input type="text" name="PubDate" value="<%=book.PubDate%>"></h4>
