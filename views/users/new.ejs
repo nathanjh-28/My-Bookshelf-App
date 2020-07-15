@@ -15,7 +15,12 @@
 
   <div class="dialogueBg">
     <div class="dialogueBox">
-
+      <!-- THIS NEEDS RADIO! -->
+      <% profiles.forEach(image => { %>
+        <div class="profile">
+          <img class="proImg" src="<%=image%>">
+        </div>
+      <% }) %>
     </div>
 
   </div>
@@ -38,7 +43,7 @@
           <input type="text" name="bookshelf2" id="bookshelf">
           <input type="text" name="bookshelf3" id="bookshelf">
           <input type="text" name="bookshelf4" id="bookshelf">
-        <button class="imgButton">Select Image</button>
+        <div class="imgButton">Select Image</div>
         <button type="submit">Create User</button>
       </form>
     </section>

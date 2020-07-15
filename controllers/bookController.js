@@ -10,7 +10,9 @@ const db = require('../models')
 
 //Add user route
 router.get('/new',(req,res)=>{
-  res.render('users/new');
+  res.render('users/new', {
+    profiles: require('../public/js/profileIcons')
+  });
 });
 
 //Create New User
