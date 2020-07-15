@@ -52,4 +52,29 @@ router.post('/register', (req, res) => {
   })
 })
 
+//Login Post Route
+router.post('/login', (req, res) => {
+  //find user by email
+  db.User.findOne({email: req.body.email}, (err, foundUser) => {
+    if (err) return console.log(err);
+    if (!foundUser) {
+      return res.send('No user found');
+    }
+    //compare passwords
+    bcrypt.compare(req.body.password, foundUser.password, (err, passwordsMatch) => {
+      if (err) return console.log(err);
+      if (passwordsMatch) {
+        const currentUser = {
+          _id: foundUser._id,
+          isLoggedIn: true
+        }
+        req.session.currentUser = currentUser;
+        res.redirect(`/users/${foundUser._id}`)
+      } else {
+        return res.send('Passwords do not match');
+      }
+    })
+  })
+})
+
 module.exports = router;
