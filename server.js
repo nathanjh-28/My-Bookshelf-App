@@ -7,7 +7,7 @@ const db = require('./models');
 const session = require('express-session');
 
 const bookController = require('./controllers/bookController');
-// const userController = require('./controllers/userController');
+const userController = require('./controllers/userController');
 const authController = require('./controllers/authController');
 
 app.set('view engine', 'ejs');
@@ -45,16 +45,9 @@ app.get('/', (req, res) => {
   })
 })
 
-// feed /users to the bookController
-// use one controller file?
-app.use(`/users`, bookController);
 app.use('/', authController);
-
-// to be separated
-//show page -- "0" to be replaced by :id
-// app.get('/users/0', (req, res) => {
-//   res.render('users/show')
-// })
+app.use(`/books`, bookController);
+app.use('/users', userController);
 
 app.get('*', (req, res) => {
   res.send('<h1>404 Page Not Found</h1>')
