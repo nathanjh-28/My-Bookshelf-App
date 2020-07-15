@@ -2,9 +2,10 @@ const mongoose = require('mongoose');
 const Book = require('./Book');
 
 const userSchema = new mongoose.Schema({
-    username: {
+    email: {
         type: String,
         required: true,
+        unique: true
     },
     password: {
         type: String,
@@ -18,7 +19,8 @@ const userSchema = new mongoose.Schema({
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Book'
         }
-    ]
+    ],
+    profileImg: String
 },{timestamps: true})
 
 module.exports = mongoose.model('User',userSchema);
