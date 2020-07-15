@@ -31,12 +31,12 @@ app.use(session({
 }))
 
 // assuming there is only one user, only for dev purposes
-let userID = 'str'
-db.User.findOne({username: 'firstUser'}, (err,foundUser)=>{
-  if(err) return console.log(err);
-  userID = foundUser._id;
-  console.log(userID);
-})
+// let userID = 'str'
+// db.User.findOne({username: 'firstUser'}, (err,foundUser)=>{
+//   if(err) return console.log(err);
+//   userID = foundUser._id;
+//   console.log(userID);
+// })
 
 // ------------------- ROUTES ---------------- //
 app.get('/', (req, res) => {
