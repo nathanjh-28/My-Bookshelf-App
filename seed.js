@@ -74,7 +74,7 @@ db.User.deleteMany({}, (err, deletedItems) => {
     email: '1@gmail.com',
     password: '$2a$10$EicoEioOaoebSFYpEPFcr.QkdjHkVcalb46VFlQYdBXPVIxk435d.',
     favQuote: "It was the best of times",
-    bookshelves: ["Currently Reading", "My Favorites", "Study Books", "Next Books To Read"],
+    bookshelves: ["Currently Reading", "My Favorites", "Study Books", "Next Books to Read"],
     displayName: 'First User'
   }, (err, createdUser) => {
     if (err) return console.log(err);
