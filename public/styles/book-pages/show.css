@@ -150,6 +150,25 @@ img {
   overflow: scroll;
   border: 1px solid grey;
 }
+.indexHead{
+  font-family: Kanit, sans-serif;
+}
+.userIndexBox {
+  padding: 5px;
+  margin: 0;
+  height: 400px;
+  overflow: scroll;
+  border: 1px solid grey;
+  font-family: Kanit, sans-serif;
+}
+.indexP {
+  font-weight: bold;
+}
+.indexP span {
+  font-weight: normal;
+}
+
+
 .reviewHeader {
   margin: 5px;
   margin-top: 10px;
