@@ -168,7 +168,8 @@ img {
     justify-content: space-between;
     align-items: center;
 }
-button {
+.userEdit,
+.userDelete {
     margin: 5px;
 }
 /* Tacks & String */
