@@ -1,12 +1,14 @@
-const diaBg = document.querySelector('.dialogueBg');
+console.log('sanity check')
 
-document.querySelector('.imgButton').addEventListener('click',()=>{
-  diaBg.style.opacity="1";
-  diaBg.style.pointerEvents="auto";
-})
+// const diaBg = document.querySelector('.dialogueBg');
 
-diaBg.addEventListener('click',()=>{
-  diaBg.style.opacity="0";
-  diaBg.style.pointerEvents="none";
-})
+// document.querySelector('.imgButton').addEventListener('click',()=>{
+//   diaBg.style.opacity="1";
+//   diaBg.style.pointerEvents="auto";
+// })
+
+// diaBg.addEventListener('click',()=>{
+//   diaBg.style.opacity="0";
+//   diaBg.style.pointerEvents="none";
+// })
 
