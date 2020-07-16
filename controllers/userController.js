@@ -13,36 +13,7 @@ router.use('/', (req, res, next) => {
   }
 })
 
-//paths begin '/users'
-//all paths continue /:userID/books/:bookID
 
-//USER ROUTES
-
-//Add user route
-//DELETE: NOW ON AUTHCONTRL
-// router.get('/new',(req,res)=>{
-//   res.render('users/new', {
-//     profiles: require('../public/js/profileIcons')
-//   });
-// });
-
-//Create New User
-//DELETE: NOW ON AUTHCONTRL
-// router.post('/',(req,res)=>{
-//   let bookArr = [req.body.bookshelf1,
-//     req.body.bookshelf2,
-//     req.body.bookshelf3,
-//     req.body.bookshelf4,];
-//     req.body.bookshelves = bookArr;
-//     console.log(req.body.bookshelves)
-//     db.User.create(req.body,(err,newUser)=>{
-//       if(err)return console.log(err);
-//       console.log(newUser);
-//       res.redirect(`/users/${newUser._id}`)
-//     });
-// });
-
-//MOVE TO USERCONTRL?
 //edit user route
 router.get('/profile/edit',(req,res)=>{
   db.User.findById(req.session.currentUser._id, (err,foundUser)=>{
@@ -52,26 +23,6 @@ router.get('/profile/edit',(req,res)=>{
     })
   })
 })
-
-//update user route
-
-/* ------- Solve Edge Case where user renames shelf --------- */
-
-// router.put('/profile',(req,res)=>{let bookArr = [req.body.bookshelf1,
-//   req.body.bookshelf2,
-//   req.body.bookshelf3,
-//   req.body.bookshelf4,];
-//   req.body.bookshelves = bookArr;
-//   console.log(req.body.bookshelves)
-//   db.User.findByIdAndUpdate(req.session.currentUser._id,
-//     req.body,
-//     {new:true},
-//     (err,updatedUser)=>{
-//     if(err)return console.log(err);
-//     console.log(updatedUser);
-//     res.redirect(`/users/profile`)
-//   });
-// });
 
 //User Show route
 router.get('/profile', (req, res) => {
