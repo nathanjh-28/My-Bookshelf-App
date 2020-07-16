@@ -66,6 +66,40 @@ main {
 .bookQuery {
   width: 100%;
 }
+.results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 337px;
+  height: 338px;
+  overflow: scroll;
+}
+.result {
+  border: 1px solid gray;
+  background: white;
+  width: 300px;
+  height: 110px;
+  margin: 10px;
+  position: relative;
+}
+img {
+  height: 100px;
+  margin: 5px;
+  float: left;
+}
+.grTitle,
+.grAuthor,
+.grDate {
+  margin: 5px;
+  padding: 0;
+}
+.grTitleInput,
+.grAuthorInput,
+.grDateInput,
+.grShelfInput {
+  opacity: 0;
+  pointer-events: none;
+}
 /*Right Page specifics*/
 .rightPage {
   transform: perspective(400px) rotateY(-2deg);
@@ -73,18 +107,18 @@ main {
   position: relative;
   z-index: 5;
 }
-h2 {
+.title {
   margin: 0;
 }
-h2 input {
+.title input {
   width: 250px;
 }
-h4 input {
+.date input {
   width: 40px;
 }
-h2,
-h3,
-h4 {
+.title,
+.author,
+.date {
   text-align: center;
 }
 .summaryBox, .reviewBox {
@@ -97,7 +131,8 @@ h4 {
 
 /*BUTTONS*/
 .addButton,
-.queryButton {
+.queryButton,
+.grButton {
   height: 50px;
   width: 80px;
   border: 1px solid grey;
@@ -121,6 +156,12 @@ h4 {
   height: 30px;
   margin-left: 250px;
   margin-bottom: 0px;
+}
+.grButton {
+  height: 30px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
 }
 
 .edit,

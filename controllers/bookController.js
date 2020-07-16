@@ -1,8 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../models')
-
-
+//search dependencies
+require('dotenv').config();
+const parseString = require('xml2js').parseString;
+const axios = require('axios');
 
 //MIDDLEWARE
 //test for authentication
@@ -56,29 +58,54 @@ router.get('/', (req, res) => {
   })
 })
 
-//Shelves route (TBD)
-// router.get('/:userID/books/shelves', (req, res) => {
-//   db.Book.find({}, (err, foundBooks) => {
-//     if (err) return console.log(err);
-//     res.render('books/shelves', {
-//       books: foundBooks,
-//       userID: req.params.userID,
-//     })
-//   })
-// })
 
 //new route (refactored)
 router.get('/new', (req, res) => {
-  //hardcoded ID
-  db.User.findById(req.session.currentUser._id, 
-    (err,foundUser)=>{
+  db.User.findById(req.session.currentUser._id, (err,foundUser)=>{
     if(err)return console.log(err);
     res.render('books/new',{
+      query: '',
       user: foundUser,
+      foundBooks: []
     });
   })
 })
 
+//search route
+router.get('/search', (req, res) => {
+  const userResults = [];
+  let url = `https://www.goodreads.com/search.xml?key=${process.env.GR_KEY}&q=`;
+  const query = req.query.query;
+  url += query.toString();
+  axios.get(url)
+  .then(response => {
+    parseString(response.data, (err, result) => {
+      const apiResults = result.GoodreadsResponse.search[0].results[0].work;
+      apiResults.forEach(result => {
+        const newBook = {};
+        newBook.title = result.best_book[0].title[0];
+        newBook.author = result.best_book[0].author[0].name[0];
+        newBook.img = result.best_book[0].image_url[0];
+        newBook.PubDate = result.original_publication_year[0]._
+        userResults.push(newBook);
+      })
+      console.log(userResults);
+      db.User.findById(req.session.currentUser._id, (err,foundUser)=>{
+        if(err)return console.log(err);
+        res.render('books/new',{
+          query: query,
+          user: foundUser,
+          foundBooks: userResults
+        });
+      })
+    })
+
+  })
+  .catch(error => {
+    console.log(error);
+  })
+})
+  
 //create route (refactored)
 router.post('/', (req, res) => {
   db.Book.create(req.body, (err, newBook) => {
