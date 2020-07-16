@@ -9,7 +9,7 @@ const booksForDB = [
     PubDate: 1985,
     primaryReview: 'This book is great.  Two thumbs up',
     coverArt: '',
-    color: '#392720'},
+    color: '#AF6F49'},
   {shelf: 'My Favorites',
     title: 'House of Leaves',
     author: 'Mark Z. Danielewski',
