@@ -64,19 +64,65 @@
             </section>
             <section class="quote">
               <div class="quoteHead">
+                <div class="tack quoteHeadR">
+                  <div class="tackTop"></div>
+                  <div class="tackMiddle"></div>
+                  <div class="tackBottom"></div>
+                  <div class="pointyBit"></div>
+                </div>
+                <div class="tack quoteHeadL">
+                  <div class="tackTop"></div>
+                  <div class="tackMiddle"></div>
+                  <div class="tackBottom"></div>
+                  <div class="pointyBit"></div>
+                </div>
                 <h4>Favorite Quote</h4>
               </div>
               <div class="quoteProper">
+                <div class="tack quoteR">
+                  <div class="tackTop"></div>
+                  <div class="tackMiddle"></div>
+                  <div class="tackBottom"></div>
+                  <div class="pointyBit"></div>
+                </div>
+                <div class="tack quoteL">
+                  <div class="tackTop"></div>
+                  <div class="tackMiddle"></div>
+                  <div class="tackBottom"></div>
+                  <div class="pointyBit"></div>
+                </div>
                 <p><%= user.favQuote %></p>
               </div>
             </section>
             <section class="stats">
+              <div class="tack statR">
+                <div class="tackTop"></div>
+                <div class="tackMiddle"></div>
+                <div class="tackBottom"></div>
+                <div class="pointyBit"></div>
+              </div>
+              <div class="tack statL">
+                <div class="tackTop"></div>
+                <div class="tackMiddle"></div>
+                <div class="tackBottom"></div>
+                <div class="pointyBit"></div>
+              </div>
               <div class="statHead">
                 <h6>Total Books</h6>
               </div>
               <div class="bookCount">
                 <p><%=user.books.length%></p>
               </div>
+            </section>
+            <section class="extraTacks">
+              <% for (let tackno = 1; tackno <= 10; tackno++) { %>
+                <div class="tack extra<%=tackno%>">
+                  <div class="tackTop"></div>
+                  <div class="tackMiddle"></div>
+                  <div class="tackBottom"></div>
+                  <div class="pointyBit"></div>
+                </div>
+              <% } %>
             </section>
             <!-- <section class="buttons">
               <a href="/users/profile/edit"><button class="userEdit">Edit User Settings</button></a>
