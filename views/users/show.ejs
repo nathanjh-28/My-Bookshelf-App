@@ -13,27 +13,76 @@
   <%-include('../nav.ejs', {userID: user._id})%> 
 <main>
   <section class="corkboard">
-    <img src="https://media-exp1.licdn.com/dms/image/C4D03AQECU0BDxdW6XQ/profile-displayphoto-shrink_200_200/0?e=1599696000&v=beta&t=Ud4QEnsQpCl62EqI_OJGziEXde9bXzMG25Di1UunTD8" alt="profile pic">
-    <h2 class="username"><%= user.displayName %> </h2>
-    <a href="/users/profile/edit"><button>Edit User Settings</button></a>
+    <!-- <img src="https://media-exp1.licdn.com/dms/image/C4D03AQECU0BDxdW6XQ/profile-displayphoto-shrink_200_200/0?e=1599696000&v=beta&t=Ud4QEnsQpCl62EqI_OJGziEXde9bXzMG25Di1UunTD8" alt="profile pic"> -->
+    <div class="displayName">
+      <div class="tack nameL">
+        <div class="tackTop"></div>
+        <div class="tackMiddle"></div>
+        <div class="tackBottom"></div>
+        <div class="pointyBit"></div>
+      </div>
+      <div class="tack nameR">
+        <div class="tackTop"></div>
+        <div class="tackMiddle"></div>
+        <div class="tackBottom"></div>
+        <div class="pointyBit"></div>
+      </div>
+      <h2><%= user.displayName %> </h2>
+    </div>
     <section class="bookshelves">
-      <h3>My Bookshelves</h3>
-      <ul>
-        <% user.bookshelves.forEach(bookshelf => { %>
-          <li><%= bookshelf %></li>
+      <div class="shelvesHeader">
+        <div class="tack shelvesHeadL">
+          <div class="tackTop"></div>
+          <div class="tackMiddle"></div>
+          <div class="tackBottom"></div>
+          <div class="pointyBit"></div>
+        </div>
+        <div class="tack shelvesHeadR">
+          <div class="tackTop"></div>
+          <div class="tackMiddle"></div>
+          <div class="tackBottom"></div>
+          <div class="pointyBit"></div>
+        </div>
+        <h3>My Shelves</h3>
+      </div>
+      <div class="eachShelf">
+        <% user.bookshelves.forEach((bookshelf, index) => { %>
+          <a href="/books/shelf/<%=index%>">
+            <div class="shelfName">
+              <div class="tack shelf<%=index%>">
+                <div class="tackTop"></div>
+                <div class="tackMiddle"></div>
+                <div class="tackBottom"></div>
+                <div class="pointyBit"></div>
+              </div>
+              <h5><%= bookshelf %></h5>
+            </div>
+          </a>
         <% }) %>
-      </ul>
+      </div>
     </section>
     <section class="quote">
-      <p><%= user.favQuote %></p>
+      <div class="quoteHead">
+        <h4>Favorite Quote</h4>
+      </div>
+      <div class="quoteProper">
+        <p><%= user.favQuote %></p>
+      </div>
     </section>
     <section class="stats">
-      <p><span>Total Books: </span> <%=user.books.length%></p>
-
+      <div class="statHead">
+        <h6>Total Books</h6>
+      </div>
+      <div class="bookCount">
+        <p><%=user.books.length%></p>
+      </div>
     </section>
-    <form action="/users/<%=user._id%>/?_method=DELETE" method="POST"><button type="submit">Delete Account</button></form>
-
-
+    <section class="buttons">
+      <a href="/users/profile/edit"><button>Edit User Settings</button></a>
+      <form action="/users/<%=user._id%>/?_method=DELETE" method="POST">
+        <button type="submit">Delete Account</button>
+      </form>
+    </section>
     <div class="bottom"></div>
   </section>
   <section class="easel">
