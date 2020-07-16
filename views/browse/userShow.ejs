@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <h1> <%= user.displayName%></h1>
+        <h2>Favorite Quote: <%= user.favQuote %> </h2>
+        <a href="/browse/<%=user._id%>/shelves "><h3> Bookshelves: </h3></a>
+        <% user.bookshelves.forEach((bookshelf, index)=> { %>
+            <a href="/browse/<%=user._id%>/shelf/<%=index%>"><p> <%=bookshelf%> </p></a>
+        <% }) %> 
+        <h4>Total Number of Books: <%= user.books.length %> </h4>
+
+    </main>
+</body>
+</html>

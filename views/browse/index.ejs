@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is the browse index</h1>
+    <section>
+        <% users.forEach(user => { %>
+            <%if(!user.privacy){%>
+                <a href="/browse/<%=user._id%>"><p> <%=user.displayName%> Books: <%=user.books.length%> </p></a>
+            <%}%>
+        <% }) %>
+        
+    </section>
+
+
+</body>
+</html>

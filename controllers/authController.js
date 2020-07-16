@@ -31,7 +31,7 @@ router.post('/register', (req, res) => {
           req.body.bookshelf2,
           req.body.bookshelf3,
           req.body.bookshelf4,];
-        const {email, favQuote, bookshelves, displayName, books, profileImg} = req.body;
+        const {email, favQuote, bookshelves, displayName, books, profileImg, privacy} = req.body;
         //construct New User Object with hashed password
         const newUser = {
           email,
@@ -40,7 +40,8 @@ router.post('/register', (req, res) => {
           bookshelves,
           displayName,
           books,
-          profileImg
+          profileImg,
+          privacy,
         }
         // Create User
         db.User.create(newUser, (err, createdUser) => {
