@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/nav.css">
+  <link rel="stylesheet" href="/styles/book-pages/shelves.css">
+  <title>Book Shelves</title>
+</head>
+<body>
+  <!-- header partial-->
+  <%-include('../nav.ejs', {userID: user._id})%>
+  <main>
+    <a href="/browse/<%=user._id%>/shelf/0">
+      <section class="shelf1">
+        <div class="shelfName1"><%=user.bookshelves[0]%></div>
+        <div class="books1">
+          <% user.books.forEach(book => { %>
+            <% if (book.shelf === user.bookshelves[0]) { %>
+              <div class="bookshelf1">
+                <div class="spineshelf1"style="background-color:<%=book.color%>;">
+                  <p><%=book.title%></p>
+                </div>
+              </div>
+            <% } %>
+          <% }) %>
+        </div>
+      </section>
+    </a>
+    <a href="/browse/<%=user._id%>/shelf/1">
+      <section class="shelf2">
+        <div class="shelfName2"><%=user.bookshelves[1]%></div>
+        <div class="books2">
+          <% user.books.forEach(book => { %>
+            <% if (book.shelf === user.bookshelves[1]) { %>
+              <div class="bookshelf2">
+                <div class="spineshelf2"style="background-color:<%=book.color%>;">
+                  <p><%=book.title%></p>
+                </div>
+              </div>
+            <% } %>
+          <% }) %>
+        </div>
+      </section>
+    </a>
+    <a href="/browse/<%=user._id%>/shelf/2">
+      <section class="shelf3">
+        <div class="shelfName3"><%=user.bookshelves[2]%></div>
+        <div class="books3">
+          <% user.books.forEach(book => { %>
+            <% if (book.shelf === user.bookshelves[2]) { %>
+              <div class="bookshelf3">
+                <div class="spineshelf3"style="background-color:<%=book.color%>;">
+                  <p><%=book.title%></p>
+                </div>
+              </div>
+            <% } %>
+          <% }) %>
+        </div>
+      </section>
+    </a>
+    <a href="/browse/<%=user._id%>/shelf/3">
+      <section class="shelf4">
+        <div class="shelfName4"><%=user.bookshelves[3]%></div>
+        <div class="books4">
+          <% user.books.forEach(book => { %>
+            <% if (book.shelf === user.bookshelves[3]) { %>
+              <div class="bookshelf4">
+                <div class="spineshelf4" style="background-color:<%=book.color%>;">
+                  <p><%=book.title%></p>
+                </div>
+              </div>
+            <% } %>
+          <% }) %>
+        </div>
+      </section>
+    </a>
+  </main>
+</body>
+</html>

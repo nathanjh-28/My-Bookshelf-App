@@ -9,6 +9,7 @@ const session = require('express-session');
 const bookController = require('./controllers/bookController');
 const userController = require('./controllers/userController');
 const authController = require('./controllers/authController');
+const browseController = require('./controllers/browseController');
 
 app.set('view engine', 'ejs');
 
@@ -38,6 +39,7 @@ app.get('/', (req, res) => {
 app.use('/', authController);
 app.use(`/books`, bookController);
 app.use('/users', userController);
+app.use('/browse', browseController);
 
 app.get('*', (req, res) => {
   res.send('<h1>404 Page Not Found</h1>')
