@@ -44,7 +44,7 @@ main {
 h2 {
     position: relative;
     padding: 10px;
-    font-family: Kanit;
+    font-family: Kanit, sans-serif;
     font-size: 36px;
     margin: 0;
 }
@@ -85,7 +85,7 @@ h2 {
 .shelfName {
     height: 24px;
     width: 190px;
-    font-family: Kanit;
+    font-family: Kanit, sans-serif;
     background: antiquewhite;
     display: flex;
     justify-content: center;
@@ -123,6 +123,7 @@ img {
     align-items: center;
     margin-bottom: 10px;
     border-radius: 3px;
+    position: relative;
 }
 .quoteHead h4 {
     margin: 0;
@@ -134,6 +135,7 @@ img {
     height: 50px;
     width: 350px;
     border-radius: 5px;
+    position: relative;
 }
 .quoteProper p {
     margin: 0;
@@ -146,7 +148,7 @@ img {
     width: 80px;
     height: 80px;
     background: antiquewhite;
-    font-family: Kanit;
+    font-family: Kanit, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -161,6 +163,13 @@ img {
     font-size: 48px;
     line-height: 32px;
 }
+.extraTacks {
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+    width: 80px;
+    height: 80px;
+}
 .buttons {
     margin-top: 60px;
     display: flex;
@@ -172,7 +181,7 @@ img {
 .userDelete {
     margin: 5px;
 }
-/* Tacks & String */
+/* Tacks */
 .tack {
     width: 10px;
     height: 12px;
@@ -209,7 +218,13 @@ img {
 .shelf2,
 .shelf3,
 .shelvesHeadL,
-.shelvesHeadR {
+.shelvesHeadR,
+.quoteHeadL,
+.quoteHeadR,
+.quoteR,
+.quoteL,
+.statR,
+.statL {
     position: absolute;
 }
 .nameL {
@@ -242,7 +257,10 @@ img {
 }
 .shelf2 .tackTop,
 .shelf2 .tackMiddle,
-.shelf2 .tackBottom {
+.shelf2 .tackBottom,
+.extra8 .tackTop,
+.extra8 .tackMiddle,
+.extra8 .tackBottom {
     background: yellow;
 }
 .shelf3 .tackTop,
@@ -269,6 +287,156 @@ img {
 .shelvesHeadR .tackMiddle,
 .shelvesHeadR .tackBottom {
     background: rgb(0, 147, 17);
+}
+.quoteHeadL {
+    left: -5px;
+    top: -3px;
+    transform: rotate(-36deg);
+}
+.quoteHeadR {
+    right: -3px;
+    top: -5px;
+    transform: rotate(44deg);
+}
+.quoteHeadL .tackTop,
+.quoteHeadL .tackMiddle,
+.quoteHeadL .tackBottom,
+.extra2 .tackTop,
+.extra2 .tackMiddle,
+.extra2 .tackBottom {
+    background: rgb(7, 25, 162);
+}
+.quoteHeadR .tackTop,
+.quoteHeadR .tackMiddle,
+.quoteHeadR .tackBottom,
+.extra1 .tackTop,
+.extra1 .tackMiddle,
+.extra1 .tackBottom {
+    background: rgb(9, 199, 196);
+}
+.quoteL {
+    left: -5px;
+    top: -3px;
+    transform: rotate(-36deg);
+}
+.quoteR {
+    right: -3px;
+    top: -5px;
+    transform: rotate(44deg);
+}
+.quoteL .tackTop,
+.quoteL .tackMiddle,
+.quoteL .tackBottom,
+.extra3 .tackTop,
+.extra3 .tackMiddle,
+.extra3 .tackBottom {
+    background: rgb(0, 147, 17);
+}
+.quoteR .tackTop,
+.quoteR .tackMiddle,
+.quoteR .tackBottom,
+.extra4 .tackTop,
+.extra4 .tackMiddle,
+.extra4 .tackBottom {
+    background: rgb(199, 92, 9);
+}
+.statL {
+    left: -4px;
+    top: -4px;
+    transform: rotate(-36deg);
+}
+.statR {
+    right: -6px;
+    top: -5px;
+    transform: rotate(44deg);
+}
+.statL .tackTop,
+.statL .tackMiddle,
+.statL .tackBottom,
+.extra5 .tackTop,
+.extra5 .tackMiddle,
+.extra5 .tackBottom {
+    background: rgb(112, 29, 228);
+}
+.statR .tackTop,
+.statR .tackMiddle,
+.statR .tackBottom,
+.extra6 .tackTop,
+.extra6 .tackMiddle,
+.extra6 .tackBottom {
+    background: rgb(233, 64, 219);
+}
+.extra1,
+.extra2,
+.extra3,
+.extra4,
+.extra5,
+.extra6,
+.extra7,
+.extra8,
+.extra9,
+.extra10 {
+    position: absolute;
+}
+.extra1 {
+    top: 10px;
+    left: 40px;
+    transform: rotate(60deg);
+}
+.extra2 {
+    top: 40px;
+    left: 55px;
+    transform: rotate(-27deg);
+}
+.extra3 {
+    top: 60px;
+    left: 60px;
+    transform: rotate(-10deg);
+}
+.extra4 {
+    top: 15px;
+    left: 70px;
+    transform: rotate(20deg);
+}
+.extra5 {
+    top: 70px;
+    left: 30px;
+    transform: rotate(26deg);
+}
+.extra6 {
+    top: 4px;
+    left: 55px;
+    transform: rotate(15deg);
+}
+.extra7 {
+    top: 49px;
+    left: 35px;
+    transform: rotate(27deg);
+}
+.extra8 {
+    top: 35px;
+    left: 25px;
+    transform: rotate(-15deg);
+}
+.extra9 {
+    top: 25px;
+    left: 5px;
+    transform: rotate(45deg);
+}
+.extra10 {
+    top: 14px;
+    left: 24px;
+    transform: rotate(-26deg);
+}
+.extra9 .tackTop,
+.extra9 .tackMiddle,
+.extra9 .tackBottom {
+    background: rgb(21, 211, 113)
+}
+.extra10 .tackTop,
+.extra10 .tackMiddle,
+.extra10 .tackBottom {
+    background: rgb(63, 63, 63)
 }
 
 .bottom {
