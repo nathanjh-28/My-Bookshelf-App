@@ -90,7 +90,12 @@ main {
 .spine p {
     margin: 0;
     font-weight: bold;
-    color: rgb(174, 130, 21)
+    color: antiquewhite;
+    /* background: -webkit-radial-gradient(black 50%, white 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+    /* background-image: radial-gradient(black white); */
+    /* color: inherit; */
 }
 
 .side {
