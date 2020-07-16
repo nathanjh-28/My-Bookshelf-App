@@ -199,6 +199,101 @@ img {
 .delete:hover p {
   text-decoration: underline;
 }
+.pickcolor{
+  width: 270px;
+  height: 64px;
+  border: solid black 1px;
+}
+.colorCheckBox {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.colorCheckBox input{
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  /* top: 0;
+  left: 0; */
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+}
+.color1 {
+  left: 0px;
+  background-color: #BD5A2F;
+}
+.color2 {
+  left: 30px;
+  background-color: #B92A2A;
+}
+.color3 {
+  left: 60px;
+  background-color: #F28E24;
+}
+.color4 {
+  left: 90px;
+  background-color: #392720;
+}
+.color5 {
+  left: 120px;
+  background-color: #573849;
+}
+.color6 {
+  left: 150px;
+  background-color: #AF6F49;
+}
+.color7 {
+  left: 180px;
+  background-color: #B9C998;
+}
+.color8 {
+  left: 210px;
+  background-color: greenyellow;
+}
+.color9 {
+  left: 240px;
+  background-color: greenyellow;
+}
+.colorCheckBox:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+.colorCheckBox input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.colorCheckBox input:checked ~ .checkmark:after {
+  display: block;
+}
+.colorCheckBox .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
 
 .rightStack {
   margin-left: 13px;

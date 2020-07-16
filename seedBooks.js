@@ -12,7 +12,6 @@ const tan = '#AF6F49';
 const seagreen = '#B9C998';
 
 
-
 const booksForDB = [
     {shelf: 'My Favorites',
       title: 'Blood Meridian',
