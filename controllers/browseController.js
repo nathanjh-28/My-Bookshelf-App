@@ -67,9 +67,9 @@ router.get('/:userID/shelf/:shelfID',(req,res)=>{
 router.get('/:userID/:bookID',(req,res)=>{
   db.Book.findById(req.params.bookID, (err, foundBook) => {
     if (err) return console.log(err);
-    res.render('books/show', {
+    res.render('browse/bookshow', {
       book: foundBook,
-      userID: req.session.currentUser._id,
+      userID: req.params.userID,
     })
   })
 })
