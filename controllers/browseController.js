@@ -4,6 +4,16 @@ const db = require('../models')
 
 //File path is /browse
 
+//MIDDLEWARE
+//test for authentication
+router.use('/', (req, res, next) => {
+  if (!req.session.currentUser) {
+    res.redirect('/login');
+  } else {
+    next();
+  }
+})
+
 // Browse user index
 router.get('/',(req,res)=>{
     db.User.find({_id:{$nin:req.session.currentUser._id}},(err,foundUsers)=>{
