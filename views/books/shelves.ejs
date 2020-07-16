@@ -19,7 +19,7 @@
             <% if (book.shelf === user.bookshelves[0]) { %>
               <div class="bookshelf1">
                 <div class="spineshelf1"style="background-color:<%=book.color%>;">
-                  <p><%=book.title%></p>
+                  <p><%=book.title.slice(0,19)%><%= book.title.length > 20 ? '...' : ''%></p>
                 </div>
               </div>
             <% } %>
@@ -35,7 +35,7 @@
             <% if (book.shelf === user.bookshelves[1]) { %>
               <div class="bookshelf2">
                 <div class="spineshelf2"style="background-color:<%=book.color%>;">
-                  <p><%=book.title%></p>
+                  <p><%=book.title.slice(0,19)%><%= book.title.length > 20 ? '...' : ''%></p>
                 </div>
               </div>
             <% } %>
@@ -51,7 +51,7 @@
             <% if (book.shelf === user.bookshelves[2]) { %>
               <div class="bookshelf3">
                 <div class="spineshelf3"style="background-color:<%=book.color%>;">
-                  <p><%=book.title%></p>
+                  <p><%=book.title.slice(0,19)%><%= book.title.length > 20 ? '...' : ''%></p>
                 </div>
               </div>
             <% } %>
@@ -67,7 +67,7 @@
             <% if (book.shelf === user.bookshelves[3]) { %>
               <div class="bookshelf4">
                 <div class="spineshelf4" style="background-color:<%=book.color%>;">
-                  <p><%=book.title%></p>
+                  <p><%=book.title.slice(0,19)%><%= book.title.length > 20 ? '...' : ''%></p>
                 </div>
               </div>
             <% } %>

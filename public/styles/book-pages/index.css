@@ -76,7 +76,9 @@ main {
 .spine {
     text-align: center;
     background-color: darkred;
-    /* background-image: linear-gradient(to top, rgb(73, 9, 9), rgb(99, 15, 15) 20%, rgb(99, 15, 15) 80%, rgb(73, 9, 9)); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .cover a {
     text-decoration: none;
@@ -86,6 +88,7 @@ main {
     color: rgb(174, 130, 21)
 }
 .spine p {
+    margin: 0;
     font-weight: bold;
     color: rgb(174, 130, 21)
 }
