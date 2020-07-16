@@ -11,7 +11,11 @@ const bookSchema = new mongoose.Schema({
         required: true,
     },
     summary: String,
-    PubDate: Number,
+    PubDate: {
+        type: Number,
+        min: 1000,
+        max: 2050,
+    },
     primaryReview: String,
     coverArt: String,
     color: String

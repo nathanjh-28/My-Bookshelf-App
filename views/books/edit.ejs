@@ -13,9 +13,9 @@
   <%-include('../nav.ejs', {userID: user._id})%> 
   <main>
     <section class="bookCover">
-      <div class="leftCover"></div>
-      <div class="spine"></div>
-      <div class="rightCover"></div>
+      <div class="leftCover" style="background-color: <%=book.color%>;"></div>
+      <div class="spine" style="background-color: <%=book.color%>;"></div>
+      <div class="rightCover" style="background-color: <%=book.color%>;"></div>
     </section>
     <section class="bookData">
       <div class="leftPage">
