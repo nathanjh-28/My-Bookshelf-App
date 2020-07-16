@@ -5,7 +5,7 @@ const methodOverride = require('method-override');
 require('dotenv').config();
 const db = require('./models');
 const session = require('express-session');
-// const MongoStore = require('connect-mongo')(session);
+const MongoStore = require('connect-mongo')(session);
 
 const bookController = require('./controllers/bookController');
 const userController = require('./controllers/userController');
@@ -30,7 +30,7 @@ app.use(session({
   cookie: {
     maxAge: 1000 * 60 * 60 * 24 * 7 * 2
   },
-  // store: new MongoStore()
+  store: new MongoStore({url: process.env.MONGODB_URI})
 }))
 
 // ------------------- ROUTES ---------------- //
