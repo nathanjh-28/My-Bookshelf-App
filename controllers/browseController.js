@@ -6,7 +6,7 @@ const db = require('../models')
 
 // Browse user index
 router.get('/',(req,res)=>{
-    db.User.find({},(err,foundUsers)=>{
+    db.User.find({_id:{$nin:req.session.currentUser._id}},(err,foundUsers)=>{
         if(err)console.log(err);
         res.render('browse/index',{
             users: foundUsers,
