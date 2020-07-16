@@ -10,6 +10,7 @@ router.get('/',(req,res)=>{
         if(err)console.log(err);
         res.render('browse/index',{
             users: foundUsers,
+            userID: req.session.currentUser._id,
         })
     })
 });

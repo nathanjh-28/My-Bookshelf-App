@@ -1,21 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- nav style -->
+    <link rel="stylesheet" href="/styles/nav.css">
+  <link rel="stylesheet" href="/styles/book-pages/show.css">
+  <title>Browse Users</title>
 </head>
 <body>
-    <h1>This is the browse index</h1>
-    <section>
-        <% users.forEach(user => { %>
+  <!-- header partial-->
+  <%-include('../nav.ejs', {userID: userID})%> 
+  <main>
+    <section class="bookCover">
+      <div class="leftCover" ></div>
+      <div class="spine"></div>
+      <div class="rightCover"></div>
+    </section>
+    <section class="bookData">
+      <div class="leftPage">
+      </div>
+      <div class="rightPage">
+        <h1>Browse Active Users</h1>
+        <div class="userIndexBox">
+          <% users.forEach(user => { %>
             <%if(!user.privacy){%>
-                <a href="/browse/<%=user._id%>"><p> <%=user.displayName%> Books: <%=user.books.length%> </p></a>
+                <p class="indexP"><a href="/browse/<%=user._id%>"><%=user.displayName%></a><span> - <%=user.books.length%>  Books</span></br></p><hr />
             <%}%>
         <% }) %>
-        
+            </div>
+
+      </div>
+      <div class="rightStack"></div>
     </section>
-
-
+  </main>
+  
 </body>
 </html>
+
+<!-- <p class='summary'><%=// book.summary %></p> -->
