@@ -1,58 +1,291 @@
 body {
-    background-image: url('../../images/homepage3.jpeg');
+    background: black;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 main {
-    margin-top: 25px;
+    background-image: url('/images/profileBackgroundSM.jpeg');
+    background-size: cover;
+    height: calc(90vh + 225px);
+    width: 800px;
+    overflow: hidden;
+    margin-top: -215px;
     display: flex;
     justify-content: center;
     position: relative;
 }
 .corkboard {
+    margin-top: 420px;
     box-sizing: border-box;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url('../../images/corkboard.jpg');
+    background-image: url('/images/corkboardSM.jpeg');
     background-size: cover;
     border: 5px solid black;
     width: 500px;
-    height: 600px;
+    height: 500px;
     z-index: 5;
     padding: 15px;
 }
-h2,
-h3,
-li,
-p {
+.displayName {
     background: antiquewhite;
+    height: 80px;
+    width: 400px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
 }
 h2 {
+    position: relative;
     padding: 10px;
+    font-family: Kanit;
+    font-size: 36px;
+    margin: 0;
+}
+.bookshelves {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 350px;
+    height: 150px;
+    position: relative;
+}
+.shelvesHeader {
+    background: antiquewhite;
+    height: 50px;
+    width: 120px;
+    font-family: Kanit;
+    line-height: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 3px;
+}
+.eachShelf {
+    height: 136px;
+    display: flex;
+    flex-direction: column;
+}
+.eachShelf a {
+    text-decoration: none;
+    color: black;
+    margin: 5px;
+}
+.eachShelf a:hover .shelfName {
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.5); 
+}
+.shelfName {
+    height: 24px;
+    width: 190px;
+    font-family: Kanit;
+    background: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    border-radius: 2px;
+}
+.shelfName h5 {
+    margin: 0;
+    margin-left: 4px;
+    font-size: 16px;
+}
+h3 {
+    margin: 0;
+    text-align: center;
 }
 img {
     height: 150px;
     width: 150px;
     border-radius: 50%;
 }
-ul {
-    list-style: none;
+.quote {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-li {
+.quoteHead {
+    width: 180px;
+    height: 30px;
+    background: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    border-radius: 3px;
+}
+.quoteHead h4 {
+    margin: 0;
+    font-family: Kanit;
+    font-size: 18px;
+}
+.quoteProper {
+    background: antiquewhite;
+    height: 50px;
+    width: 350px;
+    border-radius: 5px;
+}
+.quoteProper p {
+    margin: 0;
+    padding: 4px;
+}
+.stats {
+    position: absolute;
+    left: 40px;
+    bottom: 40px;
+    width: 80px;
+    height: 80px;
+    background: antiquewhite;
+    font-family: Kanit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 3px;
+}
+.statHead h6 {
     margin: 3px 0px;
+    font-size: 14px;
 }
+.bookCount p {
+    margin: 0;
+    font-size: 48px;
+    line-height: 32px;
+}
+.buttons {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+button {
+    margin: 5px;
+}
+/* Tacks & String */
+.tack {
+    width: 10px;
+    height: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.tackTop,
+.tackMiddle,
+.tackBottom {
+    background: red;
+}
+.tackTop {
+    width: 6px;
+    height: 2px;
+}
+.tackMiddle {
+    width: 4px;
+    height: 4px;
+}
+.tackBottom {
+    width: 8px;
+    height: 2px;
+}
+.pointyBit {
+    width: 2px;
+    height: 3px;
+    background: grey;
+}
+.nameL,
+.nameR,
+.shelf0,
+.shelf1,
+.shelf2,
+.shelf3,
+.shelvesHeadL,
+.shelvesHeadR {
+    position: absolute;
+}
+.nameL {
+    left: -4px;
+    top: -4px;
+    transform: rotate(-30deg);
+}
+.nameR {
+    right: -5px;
+    top: -2px;
+    transform: rotate(24deg);
+}
+.nameR .tackTop,
+.nameR .tackMiddle,
+.nameR .tackBottom {
+    background: blue;
+}
+.shelf0,
+.shelf1,
+.shelf2,
+.shelf3 {
+    top: -2px;
+    left: -4px;
+    transform: rotate(-40deg);
+}
+.shelf0 .tackTop,
+.shelf0 .tackMiddle,
+.shelf0 .tackBottom {
+    background: green;
+}
+.shelf2 .tackTop,
+.shelf2 .tackMiddle,
+.shelf2 .tackBottom {
+    background: yellow;
+}
+.shelf3 .tackTop,
+.shelf3 .tackMiddle,
+.shelf3 .tackBottom {
+    background: rebeccapurple;
+}
+.shelvesHeadL {
+    left: -3px;
+    top: -5px;
+    transform: rotate(-12deg);
+}
+.shelvesHeadL .tackTop,
+.shelvesHeadL .tackMiddle,
+.shelvesHeadL .tackBottom {
+    background: magenta;
+}
+.shelvesHeadR {
+    right: -5px;
+    top: -2px;
+    transform: rotate(25deg);
+}
+.shelvesHeadR .tackTop,
+.shelvesHeadR .tackMiddle,
+.shelvesHeadR .tackBottom {
+    background: rgb(0, 147, 17);
+}
+
 .bottom {
     height: 10px;
     width: 400px;
     bottom: 0;
     margin-bottom: -10px;
     z-index: 6;
+    background-image: linear-gradient(grey, lightgrey, grey);
+    box-shadow: 0px -2px 5px rgba(0,0,0,0.5),
+                0px 2px 5px rgba(0,0,0,0.5);
 }
 
 
+/* Easel*/
 .easel {
     position: absolute;
-    margin-top: 250px;
+    margin-top: 670px;
     width: 500px;
     height: 600px;
     z-index: 4;
@@ -60,11 +293,11 @@ li {
 .leg,
 .bottom {
     position: absolute;
-    background: grey;
 }
 .leg {
     width: 10px;
     height: 600px;
+    background-image: linear-gradient(to right, grey, lightgrey, grey);
 }
 .leftLeg {
     transform: rotate(20deg);
@@ -73,6 +306,8 @@ li {
 .middleLeg {
     margin-left: 245px;
     margin-top: -50px;
+    width: 8px;
+    background-image: linear-gradient(to right, rgb(63, 63, 63), grey, rgb(63, 63, 63));
 }
 .rightLeg {
     right: 0;
