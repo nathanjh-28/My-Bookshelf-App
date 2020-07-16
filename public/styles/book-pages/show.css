@@ -121,12 +121,49 @@ img {
 .date {
   text-align: center;
 }
+.addBookSummaryHead,
+.addBookReviewHead,
+.shelfPickHead,
+.colorPickHead  {
+  font-weight: bold;
+  margin: 5px 0px;
+}
+.shelfPick {
+  margin: 5px 0px;
+}
+
 .summaryBox, .reviewBox {
   width: 332px;
   height: 80px;
 }
-.summary, .review {
-  padding: 15px;
+.reviewBox {
+  height: 60px;
+}
+.reviewHeader,
+.summaryHeader {
+  margin: 5px;
+}
+.summary {
+  padding: 5px;
+  margin: 0;
+  height: 100px;
+  overflow: scroll;
+  border: 1px solid grey;
+}
+.reviewHeader {
+  margin: 5px;
+  margin-top: 10px;
+}
+.review {
+  height: 100px;
+  padding: 5px;
+  margin: 0;
+  overflow: hidden;
+}
+.bookButtons {
+  width: 350px;
+  display: flex;
+  justify-content: space-around;
 }
 
 /*BUTTONS*/
@@ -163,46 +200,21 @@ img {
   right: 10px;
   bottom: 10px;
 }
-
-.edit,
-.delete {
-  position: absolute;
-  bottom: -10px;
-  left: 100px;
-  height: 50px;
-  width: 50px;
-  margin: 5px;
-  background: purple;
-  z-index: 4;
+a {
+  text-decoration: none;
+}
+.bookDelete,
+.bookEdit button {
+  height: 30px;
+  width: 100px;
   display: flex;
-  align-items: flex-end;
   justify-content: center;
-}
-.edit p,
-.delete p {
-  color: white;
-}
-.edit {
-  left: 600px;
-}
-.delete {
-  border: 0;
-  padding: 0;
-  bottom: -20px;
-  left: 750px;
+  align-items: center;
   cursor: pointer;
-  outline: none;
-}
-.edit:hover p {
-  text-decoration: underline;
-}
-.delete:hover p {
-  text-decoration: underline;
 }
 .pickcolor{
   width: 270px;
   height: 64px;
-  border: solid black 1px;
 }
 .colorCheckBox {
   display: block;
@@ -262,11 +274,7 @@ img {
 }
 .color8 {
   left: 210px;
-  background-color: greenyellow;
-}
-.color9 {
-  left: 240px;
-  background-color: greenyellow;
+  background-color: #003399;
 }
 .colorCheckBox:hover input ~ .checkmark {
   background-color: #ccc;
