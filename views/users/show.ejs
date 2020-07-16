@@ -78,9 +78,9 @@
       </div>
     </section>
     <section class="buttons">
-      <a href="/users/profile/edit"><button>Edit User Settings</button></a>
+      <a href="/users/profile/edit"><button class="userEdit">Edit User Settings</button></a>
       <form action="/users/<%=user._id%>/?_method=DELETE" method="POST">
-        <button type="submit">Delete Account</button>
+        <button type="submit" class="userDelete">Delete Account</button>
       </form>
     </section>
     <div class="bottom"></div>

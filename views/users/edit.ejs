@@ -18,23 +18,22 @@
       <h1>My Bookshelf</h1>
     </section>
     <section class="adduser">
-      <form action="/users" method="POST">
-        <label for="username">Username: </label>
-        <input id="username" type="text" name="username" value="<%=user.username%>">
-        <label for="password"> Password: </label>
+      <form action="/users/profile/?_method=PUT" method="POST">
+        <label for="displayName">Name: </label>
+        <input id="displayName" type="text" name="displayName" value="<%=user.displayName%>">
+        <label for="email">Email: </label>
+        <input id="email" type="email" name="email" value="<%=user.email%>">
+        <label for="password"> New Password: </label>
         <input id="password" type="password" name="password">
         <label for="favQuote">Favorite Quote:</label>
-          <textarea type="text" name="favQuote" id="favQuote"><%=user.favQuote%></textarea>
-          <label for="displayName">Display Name: </label>
-          <input type="text" name="displayName" id="displayName" value="<%=user.displayName%>">
-          <label for="bookshelf"> Your Bookshelves:</label>
-          <input type="text" name="bookshelf1" id="bookshelf" value="<%=user.bookshelves[0]%>">
-          <input type="text" name="bookshelf2" id="bookshelf" value="<%=user.bookshelves[1]%>">
-          <input type="text" name="bookshelf3" id="bookshelf" value="<%=user.bookshelves[2]%>">
-          <input type="text" name="bookshelf4" id="bookshelf" value="<%=user.bookshelves[3]%>">
-          <label for="privacy"> Set Account to Private</label>
-          <input type="checkbox" name="privacy" value="true" id="privacy">
-
+        <textarea type="text" name="favQuote" id="favQuote"><%=user.favQuote%></textarea>
+        <label for="bookshelf"> Your Bookshelves:</label>
+        <input type="text" name="bookshelf1" id="bookshelf" value="<%=user.bookshelves[0]%>">
+        <input type="text" name="bookshelf2" id="bookshelf" value="<%=user.bookshelves[1]%>">
+        <input type="text" name="bookshelf3" id="bookshelf" value="<%=user.bookshelves[2]%>">
+        <input type="text" name="bookshelf4" id="bookshelf" value="<%=user.bookshelves[3]%>">
+        <label for="privacy"> Set Account to Private</label>
+        <input type="checkbox" name="privacy" id="privacy">
         <!-- select picture of themselves -->
         <button type="submit">Edit User</button>
       </form>

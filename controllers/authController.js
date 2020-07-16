@@ -31,6 +31,11 @@ router.post('/register', (req, res) => {
           req.body.bookshelf2,
           req.body.bookshelf3,
           req.body.bookshelf4,];
+        // if (req.body.privacy === 'on') {
+        //   req.body.privacy = true;
+        // } else {
+        //   req.body.privacy = false;
+        // }
         const {email, favQuote, bookshelves, displayName, books, profileImg, privacy} = req.body;
         //construct New User Object with hashed password
         const newUser = {
