@@ -75,7 +75,8 @@ db.User.deleteMany({}, (err, deletedItems) => {
     password: '$2a$10$EicoEioOaoebSFYpEPFcr.QkdjHkVcalb46VFlQYdBXPVIxk435d.',
     favQuote: "It was the best of times",
     bookshelves: ["Currently Reading", "My Favorites", "Study Books", "Next Books to Read"],
-    displayName: 'First User'
+    displayName: 'First User',
+    privacy: true,
   }, (err, createdUser) => {
     if (err) return console.log(err);
     console.log("User created: ", createdUser);
