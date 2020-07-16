@@ -1,6 +1,18 @@
 const mongoose = require('mongoose');
 const db = require('./models');
 
+const darkGreen ='#11352C' ;
+const rustOrange ='#BD5A2F' ;
+const red= '#B92A2A';
+const yellow = '#F28E24';
+const blue = '#193546';
+const brown = '#392720';
+const purple = '#573849';
+const tan = '#AF6F49';
+const seagreen = '#B9C998';
+
+
+
 const booksForDB = [
     {shelf: 'My Favorites',
       title: 'Blood Meridian',
@@ -9,7 +21,7 @@ const booksForDB = [
       PubDate: 1985,
       primaryReview: 'This book is great.  Two thumbs up',
       coverArt: '',
-      color: '#392720'},
+      color: tan},
     {shelf: 'My Favorites',
       title: 'House of Leaves',
       author: 'Mark Z. Danielewski',
@@ -17,7 +29,7 @@ const booksForDB = [
       PubDate: 2000,
       primaryReview: 'Zach loves this book, highly recommend',
       coverArt: '',
-      color: '#F28E24'}, 
+      color: yellow}, 
     {shelf: 'Study Books',
       title: 'Eloquent Javascript',
       author: 'Marijn Haverbeke',
@@ -25,7 +37,7 @@ const booksForDB = [
       PubDate: 2000,
       primaryReview: 'Kenny loves this book, he is a little weird but we will go with it',
       coverArt: '',
-      color: '#B92A2A'},
+      color: seagreen},
     {shelf: 'Study Books',
       title: 'How to Think Like a Computer Scientist',
       author: 'Peter Wentworth, Jeffrey Elkner, Allen B. Downey, and Chris Meyers',
@@ -33,7 +45,7 @@ const booksForDB = [
       PubDate: 2016,
       primaryReview: 'This is a great book, this is where I started learning python',
       coverArt: '',
-      color: '#AF6F49'},
+      color: rustOrange},
     {shelf: 'Next Books to Read',
       title: 'The Devils Candy',
       author: 'Julie Salamon',
@@ -42,7 +54,7 @@ const booksForDB = [
       PubDate: 2008,
       primaryReview: `I can't wait to read this book!`,
       coverArt: '',
-      color: '#11352C'},
+      color: red},
     {shelf: 'Next Books to Read',
       title: 'What I Talk About When I Talk About Running',
       author: 'Haruki Murakami',
@@ -50,7 +62,7 @@ const booksForDB = [
       PubDate: 2007,
       primaryReview: `I can't wait to read this book too!`,
       coverArt: '',
-      color: '#B9C998'},
+      color: yellow},
   ]
 
 // db.User.findOne({email:'1@gmail.com'},(err,foundUser)=>{
