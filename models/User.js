@@ -20,7 +20,11 @@ const userSchema = new mongoose.Schema({
             ref: 'Book'
         }
     ],
-    profileImg: String
+    profileImg: String,
+    privacy:{
+        type: Boolean,
+        default: false,
+    }
 },{timestamps: true})
 
 module.exports = mongoose.model('User',userSchema);
