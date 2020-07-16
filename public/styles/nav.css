@@ -10,7 +10,6 @@ header {
     background-color: black;
     padding: 10px;
     margin: 0;
-    /* position: fixed; */
     top: 0;
     z-index: 50;
 }
@@ -34,7 +33,6 @@ nav {
     padding: 15px;
     font-family: 'Kanit', sans-serif;
 }
-
 
 .nav-link:hover,
 .logoutbutton:hover {
