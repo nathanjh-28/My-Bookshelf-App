@@ -13,6 +13,59 @@ router.use('/', (req, res, next) => {
   }
 })
 
+// --------------- Multer ------------------ //
+// Used tutorial on youtube for this part:
+// "Node.js Image Uploading With Multer" by Traversy Media
+//https://www.youtube.com/watch?v=9Qzmri1WaaE
+
+const multer = require('multer');
+const path = require('path');
+//Set storage engine:
+const storage = multer.diskStorage({
+  destination:'./public/uploads/',
+  filename: function(req,file,cb){
+    cb(null,file.fieldname + '-' + Date.now() + path.extname(file.originalname))
+  }
+})
+// Init upload
+const upload = multer({
+  storage: storage,
+  limits: {fileSize:1000000},
+  fileFilter: function (req,file,cb){
+    checkFileType(file,cb)
+  }
+}).single('profile-img')
+
+//function for checking file type
+function checkFileType (file,cb){
+  //allowed extensions
+  const filetypes = /jpeg|jpg|png|gif/;
+  //check extensions
+  const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
+  //check that mime type is image
+  const mimetype = filetypes.test(file.mimetype);
+  if(mimetype && extname){
+    return cb(null,true);
+  }else {
+    cb('Error images only!')
+  }}
+
+//change profile picture route
+//upload route
+router.post('/upload',(req,res)=>{
+  upload(req,res,(err)=>{
+    if(err)console.log(err);
+    if(req.file==undefined){
+      res.send(`<script>alert('No valid file Selected')</script>`)
+    }
+    else {
+      db.User.findByIdAndUpdate(req.session.currentUser._id,{$set:{'profileImg':req.file.filename}},(err,updatedUser)=>{
+        res.redirect('/users/profile')
+      })
+      console.log(`file uploaded, path is uploads/${req.file.filename}`)
+    }
+  })
+})
 
 //edit user route
 router.get('/profile/edit',(req,res)=>{

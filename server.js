@@ -7,11 +7,12 @@ const db = require('./models');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 
+
 const bookController = require('./controllers/bookController');
 const userController = require('./controllers/userController');
 const authController = require('./controllers/authController');
 const browseController = require('./controllers/browseController');
-
+const e = require('express');
 app.set('view engine', 'ejs');
 
 // ----------------- MIDDLEWARE -------------- //
