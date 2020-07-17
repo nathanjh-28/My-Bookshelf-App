@@ -1,0 +1,333 @@
+body {
+  background: black;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+}
+main {
+  position: absolute;
+  height: calc(100vh - 200px);
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.bookCover,
+.bookData {
+  position: absolute;
+  height: 700px;
+  width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.leftCover,
+.spine,
+.rightCover {
+  background: rgb(85, 13, 13);
+  border: 3px solid black;
+}
+.leftCover,
+.rightCover {
+  width: 400px;
+  height: 600px;
+}
+.spine {
+  width: 60px;
+  height: 600px;
+}
+.leftCover {
+  transform: perspective(400px) rotateY(3deg);
+  transform-origin: 100% 50%;
+}
+.rightCover {
+  transform: perspective(400px) rotateY(-3deg);
+  transform-origin: 0% 50%;
+}
+
+.leftPage,
+.rightPage {
+  height: 550px;
+  width: 400px;
+  background: antiquewhite;
+  border: 1px solid black;
+  box-sizing: border-box;
+  padding: 30px;
+}
+/*Left Page specifics*/
+.leftPage {
+  transform: perspective(400px) rotateY(2deg);
+  transform-origin: 100% 50%;
+}
+.queryForm {
+  margin: 10px 0px;
+}
+.bookQuery {
+  width: 100%;
+}
+.results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 337px;
+  height: 338px;
+  overflow: scroll;
+}
+.result {
+  border: 1px solid gray;
+  background: white;
+  width: 300px;
+  height: 110px;
+  margin: 10px;
+  position: relative;
+}
+img {
+  height: 100px;
+  margin: 5px;
+  float: left;
+}
+.grTitle,
+.grAuthor,
+.grDate {
+  margin: 5px;
+  padding: 0;
+}
+.grTitleInput,
+.grAuthorInput,
+.grDateInput,
+.grShelfInput {
+  opacity: 0;
+  pointer-events: none;
+}
+/*Right Page specifics*/
+.rightPage {
+  transform: perspective(400px) rotateY(-2deg);
+  transform-origin: 0% 50%;
+  position: relative;
+  z-index: 5;
+}
+.title {
+  margin: 0;
+}
+.title input {
+  width: 250px;
+}
+.date input {
+  width: 40px;
+}
+.title,
+.author,
+.date {
+  text-align: center;
+}
+.addBookSummaryHead,
+.addBookReviewHead,
+.shelfPickHead,
+.colorPickHead  {
+  font-weight: bold;
+  margin: 5px 0px;
+}
+.shelfPick {
+  margin: 5px 0px;
+}
+
+.summaryBox, .reviewBox {
+  width: 332px;
+  height: 80px;
+}
+.reviewBox {
+  height: 60px;
+}
+.reviewHeader,
+.summaryHeader {
+  margin: 5px;
+}
+.summary {
+  padding: 5px;
+  margin: 0;
+  height: 100px;
+  overflow: scroll;
+  border: 1px solid grey;
+}
+.indexHead{
+  font-family: Kanit, sans-serif;
+}
+.userIndexBox {
+  padding: 5px;
+  margin: 0;
+  height: 400px;
+  overflow: scroll;
+  border: 1px solid grey;
+  font-family: Kanit, sans-serif;
+}
+.indexP {
+  font-weight: bold;
+}
+.indexP span {
+  font-weight: normal;
+}
+
+
+.reviewHeader {
+  margin: 5px;
+  margin-top: 10px;
+}
+.review {
+  height: 100px;
+  padding: 5px;
+  margin: 0;
+  overflow: hidden;
+}
+.bookButtons {
+  width: 350px;
+  display: flex;
+  justify-content: space-around;
+}
+
+/*BUTTONS*/
+.addButton,
+.queryButton,
+.grButton {
+  height: 50px;
+  width: 80px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: Kanit;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+.addButton:hover,
+.queryButton:hover {
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.5)
+}
+.addButton {
+  margin-top: -30px;
+  float: right;
+}
+.queryButton {
+  margin: 5px;
+  height: 30px;
+  margin-left: 250px;
+  margin-bottom: 0px;
+}
+.grButton {
+  height: 30px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+a {
+  text-decoration: none;
+}
+.bookDelete,
+.bookEdit button {
+  height: 30px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.pickcolor{
+  width: 270px;
+  height: 64px;
+}
+.colorCheckBox {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.colorCheckBox input{
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  /* top: 0;
+  left: 0; */
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+}
+.color1 {
+  left: 0px;
+  background-color: #BD5A2F;
+}
+.color2 {
+  left: 30px;
+  background-color: #B92A2A;
+}
+.color3 {
+  left: 60px;
+  background-color: #F28E24;
+}
+.color4 {
+  left: 90px;
+  background-color: #392720;
+}
+.color5 {
+  left: 120px;
+  background-color: #573849;
+}
+.color6 {
+  left: 150px;
+  background-color: #AF6F49;
+}
+.color7 {
+  left: 180px;
+  background-color: #B9C998;
+}
+.color8 {
+  left: 210px;
+  background-color: #003399;
+}
+.colorCheckBox:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+.colorCheckBox input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.colorCheckBox input:checked ~ .checkmark:after {
+  display: block;
+}
+.colorCheckBox .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.rightStack {
+  margin-left: 13px;
+  height: 568px;
+  width: 40px;
+  background: antiquewhite;
+  border: 1px solid black;
+  transform: perspective(400px) rotateY(20deg);
+  transform-origin: 0% 50%;
+}

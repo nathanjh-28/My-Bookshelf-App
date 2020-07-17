@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- nav style -->
+    <link rel="stylesheet" href="/styles/nav.css">
+    <link rel="stylesheet" href="/styles/book-pages/index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My-Bookshelf</title>
+</head>
+<body>
+    <!-- header partial-->
+<%-include('../nav.ejs', {userID: user._id})%> 
+    <main>
+        <section class="shelfPaper">
+            <h1 class="shelfName"><%=user.bookshelves[shelf]%></h1>
+        </section>
+        <section class="books">
+            <% books.forEach(book => { %>
+                <div class="book">
+                    <div class="cover">
+                        <div class="covertop"style="background-color:<%=book.color%>;">
+                        </div>
+                        <a href="/browse/<%=user._id%>/<%=book._id%>">
+                            <div class="spine"style="background-color:<%=book.color%>;">
+                                <p><%=book.title%></p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="side"></div>
+                </div>
+            <% }) %>
+        </section>
+    </main>
+    
+    
+</body>
+</html>

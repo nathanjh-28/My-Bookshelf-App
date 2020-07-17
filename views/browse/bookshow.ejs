@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- nav style -->
+    <link rel="stylesheet" href="/styles/nav.css">
+  <link rel="stylesheet" href="/styles/book-pages/show.css">
+  <title>My-Bookshelf</title>
+</head>
+<body>
+  <!-- header partial-->
+  <%-include('../nav.ejs', {userID: userID})%> 
+  <main>
+    <section class="bookCover">
+      <div class="leftCover" style="background-color: <%=book.color%>;"></div>
+      <div class="spine" style="background-color: <%=book.color%>;"></div>
+      <div class="rightCover" style="background-color: <%=book.color%>;"></div>
+    </section>
+    <section class="bookData">
+      <div class="leftPage">
+        <h1><%=book.shelf%></h1>
+      </div>
+      <div class="rightPage">
+        <h2><%= book.title %></h2>
+        <h3><%= book.author %></h3>
+        <h4><%= book.PubDate %></h4>
+        <hr />
+        <h4 class="summaryHeader">Summary</h4>
+        <p class='summary'><%= book.summary %></p>
+        <h4 class="reviewHeader">Review</h4>
+        <p class='review'><%= book.primaryReview %></p>
+      </div>
+      <div class="rightStack"></div>
+    </section>
+  </main>
+  
+</body>
+</html>

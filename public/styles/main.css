@@ -1,0 +1,85 @@
+body {
+  background-image: url('../images/homepage3.jpeg');
+  margin: 0;
+  position: relative;
+}
+
+main {
+  height: 90vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+
+h1 {
+  color: antiquewhite;
+  font-size: 36px;
+  font-family: 'Kanit', sans-serif;
+  margin: 0;
+}
+
+.loginBox,
+.adduser {
+  background: rgba(0,0,0, 0.5);
+  border: 2px solid antiquewhite;
+  border-radius: 10px;
+  height: 200px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+form {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.adduser {
+  height: 400px;
+
+}
+.username,
+.password {
+  margin: 5px 0px;
+}
+label {
+  color: antiquewhite;
+  display: inline-block;
+}
+input, textarea {
+  display: inline-block;
+  background: antiquewhite
+}
+.loginBox a {
+  margin: 5px 0px;
+}
+
+.noAccount {
+  color:antiquewhite;
+}
+.imgButton {
+  height: 25px;
+  width: 100px;
+  background: antiquewhite;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loginBox button {
+  background: antiquewhite;
+  width: 100px;
+  height: 40px;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}

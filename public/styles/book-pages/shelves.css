@@ -1,0 +1,170 @@
+:root {
+  --shelf1height: 110px;
+  --shelf2height: 129px;
+  --shelf3height: 144px;
+  --shelf4height: 128px;
+}
+
+
+body {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main {
+  z-index: 10;
+  margin-top: -100px;
+  height: 900px;
+  width: 1200px;
+  background-image: url('/images/shelvesBGsm.jpeg');
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.shelf1,
+.shelf2,
+.shelf3,
+.shelf4 {
+  position: absolute;
+}
+.shelfName1,
+.shelfName2,
+.shelfName3,
+.shelfName4 {
+  position: absolute;
+  background: rgba(0,0,0, 0.5);
+  color: antiquewhite;
+  opacity: 0;
+  transition: 250ms;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  font-family: 'Kanit', sans-serif;
+  border-radius: 15px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.shelf1,
+.shelfName1,
+.books1 {
+  height: var(--shelf1height);
+  width: 575px;
+}
+.shelf1 {
+  top: 217px;
+  left: 507px;
+}
+.shelf2,
+.shelfName2,
+.books2 {
+  height: var(--shelf2height);
+  width: 650px;
+}
+.shelf2 {
+  top: 365px;
+  left: 190px;
+}
+.shelf3,
+.shelfName3,
+.books3 {
+  height: var(--shelf3height);
+  width: 620px;
+}
+.shelf3 {
+  top: 515px;
+  left: 275px;
+}
+.shelf4,
+.shelfName4,
+.books4 {
+  height: var(--shelf4height);
+  width: 620px;
+}
+.shelf4 {
+  top: 694px;
+  left: 100px;
+}
+
+.shelf1:hover .shelfName1 {
+  opacity: 1;
+}
+.shelf2:hover .shelfName2 {
+  opacity: 1;
+}
+.shelf3:hover .shelfName3 {
+  opacity: 1;
+}
+.shelf4:hover .shelfName4 {
+  opacity: 1;
+}
+
+.books1,
+.books2,
+.books3,
+.books4 {
+  display: flex;
+  z-index: 9;
+}
+.books1,
+.books3 {
+  flex-direction: row-reverse;
+}
+
+.bookshelf1,
+.bookshelf2,
+.bookshelf3,
+.bookshelf4 {
+  width: 20px;
+}
+
+.bookshelf1 {
+  height: var(--shelf1height);
+}
+.bookshelf2 {
+  height: var(--shelf2height);
+}
+.bookshelf3 {
+  height: var(--shelf3height);
+}
+.bookshelf4 {
+  height: var(--shelf4height);
+}
+.spineshelf1,
+.spineshelf2,
+.spineshelf3,
+.spineshelf4 {
+  box-sizing: border-box;
+  height: 20px;
+  margin-top: -22px;
+  transform: rotate(90deg);
+  transform-origin: 0% 100%;
+  background: red;
+  border: 1px solid black;
+  text-align: center;
+}
+.spineshelf1 {
+  width: var(--shelf1height);
+}
+.spineshelf2 {
+  width: var(--shelf2height);
+}
+.spineshelf3 {
+  width: var(--shelf3height);
+}
+.spineshelf4 {
+  width: var(--shelf4height);
+}
+p {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  margin-top: 2px;
+  color: black;
+  font-size: 12px;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- nav style -->
+  <link rel="stylesheet" href="/styles/nav.css">
+  <link rel="stylesheet" href="/styles/main.css">
+  <script defer src="/js/app.js"></script>  
+  <title>My-Bookshelf</title>
+</head>
+<body>
+
+  <main>
+    <section class="appName">
+      <h1>My Bookshelf</h1>
+    </section>
+    <section class="adduser">
+      <form action="/register" method="POST">
+        <label for="displayName">Display Name: </label>
+        <input type="text" name="displayName" id="displayName">
+        <label for="email">Email: </label>
+        <input id="email" type="email" name="email">
+        <label for="password"> Password: </label>
+        <input id="password" type="password" name="password">
+        <label for="favQuote">Favorite Quote:</label>
+        <textarea type="text" name="favQuote" id="favQuote"></textarea>
+        <label for="bookshelf"> Your Bookshelves:</label>
+        <input type="text" name="bookshelf1" id="bookshelf">
+        <input type="text" name="bookshelf2" id="bookshelf">
+        <input type="text" name="bookshelf3" id="bookshelf">
+        <input type="text" name="bookshelf4" id="bookshelf">
+        <label for="privacy"> Set Account to Private</label>
+        <input type="checkbox" name="privacy" value="true" id="privacy">
+        <button type="submit">Create User</button>
+      </form>
+    </section>
+  </main>
+  
+</body>
+</html>
