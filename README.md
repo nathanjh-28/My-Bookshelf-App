@@ -1,5 +1,5 @@
 # My-Bookshelf App: User Stories
-Elevator Pitch: An application where users can create bookshelves storing information about their favorite books (or books currently reading).  Read reviews they have submitted for each book (stretch: or from goodreads). 
+Elevator Pitch: An application where users can create bookshelves storing information about their favorite books (or books currently reading).  Read reviews they have submitted for each book and see other users saved bookshelves. 
 
 ## Site Design
 ### Root Page
@@ -30,7 +30,7 @@ Utilizes dropdowns for Add/Edit
 Light design calls attention to proper areas
 
 ## Models
-<!--ADD ERD HERE -->
+![Root Page](./public/images/ERDv2.jpeg)
 ### CRUD
 #### For Books
 * Add (create) book from user input (Stretch: Goodreads Search)
@@ -48,10 +48,29 @@ Light design calls attention to proper areas
 * Update user info/password/image
 * Delete user instance
 
+## Dependencies Installed
+* express
+* express-session
+* connect-mongo
+* mongoose
+* bcryptjs
+* dotenv
+* method-override
+* multer
+* axios
+* xml2js
+
+## Technologies
+* Frontend - HTML, CSS, JS
+* Backend - Mongoose, MongoDB Express, Node.js, Multer
+* Auth - bcrypt
+
+
 ## Schedule:
 **Delegation:**
 * Pair programming planned for all stages
 * Any evening time allows for extra programming, pull request in the morning
+
 **Friday** (Initiating project)
 * Planning
 * Start Hardcoded HTML, CSS
@@ -61,16 +80,20 @@ Light design calls attention to proper areas
 * Implement hardcoded site design
 * Database Models
 * Hardcoded data (3-5 books, 1 user, 2 shelves)
+
 **Monday**
 * Morning - beautify site design
 * Afternoon - Routes/functionality
+
 **Tuesday?** (User)
 * Finish routes and functionality
 * Authentication setup (Stretch Goal)
+
 **Wednesday** (Stretch day)
 * Plumb in API
 * Stretch Goals
 * Any additional styling
+
 **Thursday** (finesse day)
 * Edge cases
 * POLISH POLISH POLISH day
@@ -85,7 +108,7 @@ Light design calls attention to proper areas
 * User authentication
 *Feasibility: 8 Provided Kenny’s lesson, this should happen*
 
-* Searching goodreads API and adding a book from there (click on eyeglasses)
+* Searching goodreads API and adding a book from there
 *Feasibility: 6 Goodreads API exists, but needs dev key. Doesn’t need OAuth for simple requests.*
 
 * User-to-User Interactions (Index page, see their bookshelves)
