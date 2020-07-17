@@ -35,7 +35,21 @@
         <label for="privacy"> Set Account to Private</label>
         <input type="checkbox" name="privacy" id="privacy" <%=user.privacy ? 'checked' : null%>>
         <!-- select picture of themselves -->
-        <button type="submit">Edit User</button>
+        <button type="submit">Edit User Settings</button>
+      </form>
+      <!-- Multer bs -->
+      <label for="">Upload your own profile picture</label>
+      <form action="/users/upload" method="POST" enctype="multipart/form-data">
+        <div class="file-field input-field">
+          <div class="btn">
+            <span>File</span>
+            <input name="profile-img" type="file">
+          </div>
+          <!-- <div class="file-path-wrapper">
+            <input class="file-path validate" type="text">
+          </div> -->
+        </div>
+        <button type="submit" class="btn">Change Profile Pic</button>
       </form>
     </section>
   </main>

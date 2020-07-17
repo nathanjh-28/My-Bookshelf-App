@@ -20,7 +20,10 @@ const userSchema = new mongoose.Schema({
             ref: 'Book'
         }
     ],
-    profileImg: String,
+    profileImg: {
+        type: String,
+        default: 'default.jpg'
+    },
     privacy:{
         type: Boolean,
         default: false,
