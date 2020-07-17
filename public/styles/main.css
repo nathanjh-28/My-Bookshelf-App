@@ -59,6 +59,10 @@ input, textarea {
 .loginBox a {
   margin: 5px 0px;
 }
+
+.noAccount {
+  color:antiquewhite;
+}
 .imgButton {
   height: 25px;
   width: 100px;

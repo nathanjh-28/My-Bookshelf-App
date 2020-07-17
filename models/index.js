@@ -1,5 +1,10 @@
 const mongoose = require('mongoose');
 
+// ------ for use with seed file, seed does not like env ---- //
+// const MONGODB_URI = 
+//mongoose.connect(MONGODB_URI, {
+
+
 mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useCreateIndex: true,

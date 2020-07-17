@@ -14,6 +14,10 @@ router.use('/', (req, res, next) => {
 })
 
 // --------------- Multer ------------------ //
+// Used tutorial on youtube for this part:
+// "Node.js Image Uploading With Multer" by Traversy Media
+//https://www.youtube.com/watch?v=9Qzmri1WaaE
+
 const multer = require('multer');
 const path = require('path');
 //Set storage engine:

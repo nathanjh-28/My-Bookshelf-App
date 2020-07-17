@@ -13,7 +13,10 @@ const userSchema = new mongoose.Schema({
     },
     favQuote: String,
     bookshelves: [String],
-    displayName: String,
+    displayName: {
+        type: String,
+        maxlength: 12,
+    },
     books: [
         {
             type: mongoose.Schema.Types.ObjectId,

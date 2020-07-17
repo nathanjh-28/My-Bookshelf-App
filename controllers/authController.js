@@ -15,6 +15,7 @@ router.get('/register', (req,res) => {
 
 //Register Create Route
 router.post('/register', (req, res) => {
+  if(req.body.displayName.length > 12)res.send(`<script>alert('Display Name too long, cannot exceed 12 characters')</script>`)
   db.User.findOne({email: req.body.email}, (err, foundUser) => {
     if (err) return console.log(err);
     //check for existing account
