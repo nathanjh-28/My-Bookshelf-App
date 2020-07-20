@@ -28,6 +28,9 @@ main {
     justify-content: center;
     background: antiquewhite;
     transform: perspective(500px) rotateX(60deg);
+    -webkit-transform: perspective(500px) rotateX(60deg);
+    -moz-transform: perspective(500px) rotateX(60deg);
+    -o-transform: perspective(500px) rotateX(60deg);
 }
 .shelfName {
     width: 95%;
@@ -68,6 +71,12 @@ main {
     height: 11px;
     transform: skewX(112deg);
     transform-origin: 0 100%;
+    -webkit-transform: skewX(112deg);
+    -webkit-transform-origin: 0 100%;
+    -moz-transform: skewX(112deg);
+    -moz-transform-origin: 0 100%;
+    -o-transform: skewX(112deg);
+    -o-transform-origin: 0 100%;
 }
 .spine,
 .side {
