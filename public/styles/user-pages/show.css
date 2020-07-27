@@ -232,11 +232,17 @@ img {
     left: -4px;
     top: -4px;
     transform: rotate(-30deg);
+    -webkit-transform: rotate(-30deg);
+    -moz-transform: rotate(-30deg);
+    -o-transform: rotate(-30deg);
 }
 .nameR {
     right: -5px;
     top: -2px;
     transform: rotate(24deg);
+    -webkit-transform: rotate(24deg);
+    -moz-transform: rotate(24deg);
+    -o-transform: rotate(24deg);
 }
 .nameR .tackTop,
 .nameR .tackMiddle,
@@ -250,6 +256,9 @@ img {
     top: -2px;
     left: -4px;
     transform: rotate(-40deg);
+    -webkit-transform: rotate(-40deg);
+    -moz-transform: rotate(-40deg);
+    -o-transform: rotate(-40deg);
 }
 .shelf0 .tackTop,
 .shelf0 .tackMiddle,
@@ -273,6 +282,9 @@ img {
     left: -3px;
     top: -5px;
     transform: rotate(-12deg);
+    -webkit-transform: rotate(-12deg);
+    -moz-transform: rotate(-12deg);
+    -o-transform: rotate(-12deg);
 }
 .shelvesHeadL .tackTop,
 .shelvesHeadL .tackMiddle,
@@ -283,6 +295,9 @@ img {
     right: -5px;
     top: -2px;
     transform: rotate(25deg);
+    -webkit-transform: rotate(25deg);
+    -moz-transform: rotate(25deg);
+    -o-transform: rotate(25deg);
 }
 .shelvesHeadR .tackTop,
 .shelvesHeadR .tackMiddle,
@@ -293,11 +308,17 @@ img {
     left: -5px;
     top: -3px;
     transform: rotate(-36deg);
+    -webkit-transform: rotate(-36deg);
+    -moz-transform: rotate(-36deg);
+    -o-transform: rotate(-36deg);
 }
 .quoteHeadR {
     right: -3px;
     top: -5px;
     transform: rotate(44deg);
+    -webkit-transform: rotate(44deg);
+    -moz-transform: rotate(44deg);
+    -o-transform: rotate(44deg);
 }
 .quoteHeadL .tackTop,
 .quoteHeadL .tackMiddle,
@@ -345,11 +366,17 @@ img {
     left: -4px;
     top: -4px;
     transform: rotate(-36deg);
+    -webkit-transform: rotate(-36deg);
+    -moz-transform: rotate(-36deg);
+    -o-transform: rotate(-36deg);
 }
 .statR {
     right: -6px;
     top: -5px;
     transform: rotate(44deg);
+    -webkit-transform: rotate(44deg);
+    -moz-transform: rotate(44deg);
+    -o-transform: rotate(44deg);
 }
 .statL .tackTop,
 .statL .tackMiddle,
@@ -383,51 +410,81 @@ img {
     top: 10px;
     left: 40px;
     transform: rotate(60deg);
+    -webkit-transform: rotate(60deg);
+    -moz-transform: rotate(60deg);
+    -o-transform: rotate(60deg);
 }
 .extra2 {
     top: 40px;
     left: 55px;
     transform: rotate(-27deg);
+    -webkit-transform: rotate(-27deg);
+    -moz-transform: rotate(-27deg);
+    -o-transform: rotate(-27deg);
 }
 .extra3 {
     top: 60px;
     left: 60px;
     transform: rotate(-10deg);
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    -o-transform: rotate(-10deg);
 }
 .extra4 {
     top: 15px;
     left: 70px;
     transform: rotate(20deg);
+    -webkit-transform: rotate(20deg);
+    -moz-transform: rotate(20deg);
+    -o-transform: rotate(20deg);
 }
 .extra5 {
     top: 70px;
     left: 30px;
     transform: rotate(26deg);
+    -webkit-transform: rotate(26deg);
+    -moz-transform: rotate(26deg);
+    -o-transform: rotate(26deg);
 }
 .extra6 {
     top: 4px;
     left: 55px;
     transform: rotate(15deg);
+    -webkit-transform: rotate(15deg);
+    -moz-transform: rotate(15deg);
+    -o-transform: rotate(15deg);
 }
 .extra7 {
     top: 49px;
     left: 35px;
     transform: rotate(27deg);
+    -webkit-transform: rotate(27deg);
+    -moz-transform: rotate(27deg);
+    -o-transform: rotate(27deg);
 }
 .extra8 {
     top: 35px;
     left: 25px;
     transform: rotate(-15deg);
+    -webkit-transform: rotate(-15deg);
+    -moz-transform: rotate(-15deg);
+    -o-transform: rotate(-15deg);
 }
 .extra9 {
     top: 25px;
     left: 5px;
     transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
 }
 .extra10 {
     top: 14px;
     left: 24px;
     transform: rotate(-26deg);
+    -webkit-transform: rotate(-26deg);
+    -moz-transform: rotate(-26deg);
+    -o-transform: rotate(-26deg);
 }
 .extra9 .tackTop,
 .extra9 .tackMiddle,
@@ -472,6 +529,12 @@ img {
 .leftLeg {
     transform: rotate(20deg);
     transform-origin: 0 100%;
+    -webkit-transform: rotate(20deg);
+    -webkit-transform-origin: 0% 100%;
+    -moz-transform: rotate(20deg);
+    -moz-transform-origin: 0 100%;
+    -o-transform: rotate(20deg);
+    -o-transform-origin: 0 100%;
 }
 .middleLeg {
     margin-left: 245px;
@@ -483,4 +546,10 @@ img {
     right: 0;
     transform: rotate(-20deg);
     transform-origin: 100% 100%;
+    -webkit-transform: rotate(-20deg);
+    -webkit-transform-origin: 100% 100%;
+    -moz-transform: rotate(-20deg);
+    -moz-transform-origin: 100% 100%;
+    -o-transform: rotate(-20deg);
+    -o-transform-origin: 100% 100%;
 }
