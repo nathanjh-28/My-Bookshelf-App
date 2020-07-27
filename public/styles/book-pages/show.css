@@ -30,20 +30,18 @@ main {
 }
 .leftCover,
 .rightCover {
-  width: 400px;
-  height: 600px;
+  width: 420px;
+  height: 620px;
 }
 .spine {
   width: 60px;
   height: 600px;
 }
 .leftCover {
-  transform: perspective(400px) rotateY(3deg);
-  transform-origin: 100% 50%;
+  clip-path: polygon(0% 0%, 100% 2%, 100% 98%, 0% 100%);
 }
 .rightCover {
-  transform: perspective(400px) rotateY(-3deg);
-  transform-origin: 0% 50%;
+  clip-path: polygon(100% 0%, 0% 2%, 0% 98%, 100% 100%);
 }
 
 .leftPage,
@@ -59,6 +57,12 @@ main {
 .leftPage {
   transform: perspective(400px) rotateY(2deg);
   transform-origin: 100% 50%;
+  -webkit-transform: perspective(400px) rotateY(2deg);
+  -webkit-transform-origin: 100% 50%;
+  -moz-transform: perspective(400px) rotateY(2deg);
+  -moz-transform-origin: 100% 50%;
+  -o-transform: perspective(400px) rotateY(2deg);
+  -o-transform-origin: 100% 50%;
 }
 .queryForm {
   margin: 10px 0px;
@@ -104,6 +108,12 @@ img {
 .rightPage {
   transform: perspective(400px) rotateY(-2deg);
   transform-origin: 0% 50%;
+  -webkit-transform: perspective(400px) rotateY(-2deg);
+  -webkit-transform-origin: 0% 50%;
+  -moz-transform: perspective(400px) rotateY(-2deg);
+  -moz-transform-origin: 0% 50%;
+  -o-transform: perspective(400px) rotateY(-2deg);
+  -o-transform-origin: 0% 50%;
   position: relative;
   z-index: 5;
 }
@@ -330,4 +340,10 @@ a {
   border: 1px solid black;
   transform: perspective(400px) rotateY(20deg);
   transform-origin: 0% 50%;
+  -webkit-transform: perspective(400px) rotateY(20deg);
+  -webkit-transform-origin: 0% 50%;
+  -moz-transform: perspective(400px) rotateY(20deg);
+  -moz-transform-origin: 0% 50%;
+  -o-transform: perspective(400px) rotateY(20deg);
+  -o-transform-origin: 0% 50%;
 }
